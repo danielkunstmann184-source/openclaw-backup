@@ -1,69 +1,36 @@
 # MEMORY.md - Zentrales Gedächtnis
 
-_This is my long-term memory. Curated, not raw logs._
+_This is my long-term memory. Now organized hierarchically._
 
 ---
 
-## 🧑 Mein Mensch
+## 📁 Memory-Struktur
 
-| Feld | Wert |
-|------|------|
-| **Name** | Daniel Kunstmann |
-| **Username** | @dakunst_real |
-| **Sprache** | Deutsch |
-| **Timezone** | Europe/Berlin (GMT+1) |
-| **Wohnort** | Friedrichroda, Thüringen |
-| **Familie** | Freundin Juliane, Sohn Jonas |
-
-### Arbeit
-- **Beruf:** Vertriebler bei der Kreditreform
-- **Standort:** Gotha, Liebetrau Straße 4
-- **Tätigkeit:** Lead-Generierung, Telefonakquise, Neukundengewinnung für Mitgliedschaften
-
-### Tagesablauf (typisch)
-- **07:00** — Aufstehen
-- **07:30** — Abfahrt zur Arbeit
-- **12:00** — Mittagspause (oft im Außendienst)
-- **17:00** — Feierabend
-
-### Aktuelle Situation
-- Unterstützt seine Eltern bei einer **Arbeitsschutzklage**
-- Strategische Absprachen mit deren Anwalt
-
-### Wichtiges
-- Wiederholte Installationen vorher — jetzt soll es stabil laufen
-- Braucht: Alltagsassistenz, Terminüberblick, Erinnerungen, Lebensvereinfachung
-
----
-
-## 🤖 Über mich (Assistant)
-
-| Feld | Wert |
-|------|------|
-| **Name** | Assistant |
-| **Creature** | AI-Assistent |
-| **Vibe** | Professionell und hilfsbereit |
-| **Emoji** | 🤖 |
+| Ordner | Inhalt | Pfad |
+|--------|--------|------|
+| 👤 **01_people** | Personen, Kontakte, Beziehungen | `memory/01_people/` |
+| 🕐 **02_routines** | Tagesabläufe, Routinen, Orte | `memory/02_routines/` |
+| 📋 **03_projects** | Aktive Projekte, Termine | `memory/03_projects/` |
+| ⚙️ **04_preferences** | Einstellungen, Präferenzen | `memory/04_preferences/` |
+| 📦 **05_archive** | Alte Daten, Legacy-Files | `memory/05_archive/` |
 
 ---
 
 ## 🎯 Aktive Projekte
 
-1. **Setup-Phase** — Noch am Anfang, lernen uns kennen
-2. **Eltern-Arbeitsschutzklage** — Unterstützung bei laufendem Verfahren
+Siehe: `memory/03_projects/aktiv.md`
 
----
-
-## 📌 Wichtige Präferenzen
-
-- *(noch zu entdecken)*
+1. Setup-Phase (OpenClaw-Konfiguration)
+2. Eltern-Arbeitsschutzklage
+3. Werkstatttermin (12.02.2026)
+4. Kundenakquise
 
 ---
 
 ## 📝 Notizen
 
-- 2026-02-05: Erstes Gespräch. Daniel spricht Deutsch. Setup beginnt.
-- **2026-02-12 (Do) 08:00** — Werkstatttermin: Auto in die Werkstatt bringen 🔧🚗
+- **2026-02-07:** Memory-Struktur reorganisiert (Backup: `a16b9b5`)
+- **2026-02-07:** Moonshot AI Abo aktiviert (16,72€/Monat)
 
 ---
 

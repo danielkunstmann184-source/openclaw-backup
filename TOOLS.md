@@ -53,3 +53,17 @@ Add whatever helps you do your job. This is your cheat sheet.
 - **API Key:** sk-kimi-zx25QRnfxq3Azzf9TY0kN6eeV4HKZQ11fnmpoiT2HQPmRAuyhbX3lvGZz0cU8c0j
 - **Aktiviert:** 2026-02-07
 - **Modell:** Kimi k2.5
+
+## TTS (Text-to-Speech)
+
+- **System:** Sherpa ONNX (lokal, offline)
+- **Deutsches Modell:** Thorsten (de_DE)
+- **Pfad:** `~/.openclaw/tools/sherpa-onnx-tts/`
+- **Format:** Ogg/Opus (Telegram-kompatibel)
+
+## Auto-Modus
+
+- **Aktivierung:** "Peter, ich bin jetzt im Auto"
+- **Deaktivierung:** "Peter, Autofahrt beendet"
+- **Effekt:** Kurze Antworten + automatische Sprachausgabe
+- **Konfiguration:** `memory/04_preferences/auto_mode.md`

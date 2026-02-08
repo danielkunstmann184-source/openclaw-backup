@@ -31,6 +31,7 @@ Siehe: `memory/03_projects/aktiv.md`
 
 - **2026-02-07:** Memory-Struktur reorganisiert (Backup: `a16b9b5`)
 - **2026-02-07:** Moonshot AI Abo aktiviert (16,72€/Monat)
+- **2026-02-08:** Auto-Modus eingerichtet für hands-free Nutzung im Auto 🚗
 
 ---
 

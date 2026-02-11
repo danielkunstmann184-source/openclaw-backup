@@ -4,7 +4,7 @@ _Sammlung aller Projektideen und Konzepte._
 
 | # | Idee | Status | Priorität | Aufwand | Erstellt |
 |---|------|--------|-----------|---------|----------|
-| 1 | 🎭 [Alex Hormozi Agent](alex_hormozi_agent.md) | 💭 Idee | Mittel | 10-20h | 2026-02-09 |
+| 3 | 🎙️ [Qwen3-TTS Integration](qwen3-tts-integration.md) | 💭 Idee | Mittel | Warte auf GPU | 2026-02-10 |
 | 2 | 🧬 [Universal Persona Extract](universal_persona_extract.md) | 💭 Konzept | Hoch | Visionär | 2026-02-09 |
 
 ---

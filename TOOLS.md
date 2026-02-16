@@ -41,18 +41,7 @@ Add whatever helps you do your job. This is your cheat sheet.
 
 ---
 
-## Twitter/X Auth
 
-- **Username:** @dakunst_real
-- **Auth Token:** 8679c586b3cc542038affe59ed2914f4d34187f1
-- **CT0 Token:** 91bb5ee556c8181a4c3bbee70a695177f4a3497c1e922107b9830dabee11ec53f9721d101675d150401049d6445aa53c6b2de595b0aad47eb0086af02c3d85b8cee380ff0779cf7fa2af8f39e18f0f17
-- **Configured:** 2026-02-07
-
-## Moonshot AI API
-
-- **API Key:** sk-kimi-zx25QRnfxq3Azzf9TY0kN6eeV4HKZQ11fnmpoiT2HQPmRAuyhbX3lvGZz0cU8c0j
-- **Aktiviert:** 2026-02-07
-- **Modell:** Kimi k2.5
 
 ## TTS (Text-to-Speech)
 

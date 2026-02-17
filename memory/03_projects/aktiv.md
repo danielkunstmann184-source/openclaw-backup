@@ -12,13 +12,17 @@
 - Strategische Absprachen mit Anwalt
 - Regelmäßige Updates
 
-## 3. Werkstatttermin (anstehend)
-
-- **Datum:** Do, 12.02.2026 um 08:00 Uhr
-- **Was:** Auto in die Werkstatt bringen
-
-## 4. Kundenakquise (laufend)
+## 3. Kundenakquise (laufend)
 
 - Lead-Generierung für Kreditreform
 - Telefonakquise
 - Mitgliedschaftsverkäufe
+
+---
+
+## ✅ Erledigte Projekte
+
+### Werkstatttermin (erledigt)
+- **Datum:** Do, 12.02.2026 um 08:00 Uhr
+- **Status:** ✅ Abgeschlossen
+- **Was:** Auto in die Werkstatt gebracht

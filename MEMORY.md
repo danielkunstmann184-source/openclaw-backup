@@ -22,8 +22,13 @@ Siehe: `memory/03_projects/aktiv.md`
 
 1. Setup-Phase (OpenClaw-Konfiguration)
 2. Eltern-Arbeitsschutzklage
-3. Werkstatttermin (12.02.2026)
-4. Kundenakquise
+3. Kundenakquise
+
+---
+
+## ✅ Erledigte Projekte
+
+- Werkstatttermin (12.02.2026) ✅
 
 ---
 

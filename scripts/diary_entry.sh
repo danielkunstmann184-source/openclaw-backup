@@ -1,9 +1,23 @@
 #!/bin/bash
-# Daily Diary Entry Script for Notion
-# Runs at 23:40 UTC
+# Daily Diary Entry Script for Notion - FIXED VERSION
+# Lädt Token aus Datei, aktualisierte API-Version
 
 WORKSPACE="/home/ubuntu/.openclaw/workspace"
-NOTION_TOKEN="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"
+
+# Token aus .env.notion laden (nicht hardcoded!)
+if [ -f "$WORKSPACE/.env.notion" ]; then
+    NOTION_TOKEN=$(cat "$WORKSPACE/.env.notion" | tr -d '[:space:]')
+else
+    echo "❌ .env.notion nicht gefunden"
+    exit 1
+fi
+
+# Prüfe ob Token gesetzt
+if [ -z "$NOTION_TOKEN" ]; then
+    echo "❌ Notion Token ist leer"
+    exit 1
+fi
+
 DATABASE_ID="416f67c5-1cda-4248-8f43-2911e8ca633c"
 
 # Get today's date in German
@@ -22,10 +36,29 @@ case $WEEKDAY in
     Sunday) WEEKDAY_GER="Sonntag" ;;
 esac
 
-# Create page in Notion
-curl -X POST "https://api.notion.com/v1/pages" \
+# Prüfe ob Eintrag für heute bereits existiert (einfache Prüfung via Titel)
+EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
   -H "Authorization: Bearer $NOTION_TOKEN" \
-  -H "Notion-Version: 2025-09-03" \
+  -H "Notion-Version: 2022-06-28" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"filter\": {
+      \"property\": \"Name\",
+      \"title\": {
+        \"equals\": \"${DATE_STR}_Tagesreflexion\"
+      }
+    }
+  }" | grep -o '"results":\[\]' || echo "not_found")
+
+if [ "$EXISTING" != "not_found" ]; then
+    echo "ℹ️ Eintrag für $DATE_STR existiert bereits"
+    exit 0
+fi
+
+# Create page in Notion
+RESPONSE=$(curl -s -X POST "https://api.notion.com/v1/pages" \
+  -H "Authorization: Bearer $NOTION_TOKEN" \
+  -H "Notion-Version: 2022-06-28" \
   -H "Content-Type: application/json" \
   -d "{
     \"parent\": {\"database_id\": \"$DATABASE_ID\"},
@@ -50,4 +83,13 @@ curl -X POST "https://api.notion.com/v1/pages" \
       {\"object\": \"block\", \"type\": \"heading_2\", \"heading_2\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"🎯 Ausblick Morgen\"}}]}},
       {\"object\": \"block\", \"type\": \"paragraph\", \"paragraph\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"(Wird aus MEMORY.md ermittelt)\"}}]}}
     ]
-  }"
+  }")
+
+# Prüfe Response
+if echo "$RESPONSE" | grep -q '"id"'; then
+    echo "✅ Tagebucheintrag für $DATE_STR erstellt"
+    exit 0
+else
+    echo "❌ Fehler beim Erstellen: $RESPONSE"
+    exit 1
+fi

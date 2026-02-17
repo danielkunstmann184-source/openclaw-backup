@@ -1,5 +1,17 @@
-# HEARTBEAT.md
+# 🚨 HEARTBEAT CHECKLIST
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## Bei jedem Start (nach Reinstall):
+- [ ] REINSTALL_RECOVERY.md gelesen?
+- [ ] Falls leerer Workspace → `scripts/restore_from_backup.sh` ausführen!
 
-# Add tasks below when you want the agent to check something periodically.
+## Tägliche Checks:
+- [ ] Backup-Log prüfen: `tail logs/backup.log`
+- [ ] Letztes Backup erfolgreich?
+
+## Wochentliche Checks:
+- [ ] Git-Status: Änderungen committed?
+- [ ] Repo auf GitHub aktuell?
+
+## ERINNERUNG:
+Session-Speicher = NICHT EXISTENT
+→ IMMER sofort in Dateien schreiben!

@@ -1,51 +1,49 @@
 #!/bin/bash
-# Daily Backup Script for OpenClaw Workspace
-# Runs at 23:30 UTC
-# ROBUST VERSION - works even after reinstall
+# Daily Backup Script - FIXED VERSION
+# Lädt Token aus Datei (nicht hardcoded)
 
 WORKSPACE="/home/ubuntu/.openclaw/workspace"
 DATE=$(date '+%Y-%m-%d %H:%M')
 LOG_FILE="$WORKSPACE/logs/backup.log"
-GITHUB_TOKEN="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"
+
+# Token aus Datei laden (nicht in Git!)
+if [ -f "$WORKSPACE/.github_token" ]; then
+    GITHUB_TOKEN=$(cat "$WORKSPACE/.github_token" | tr -d '[:space:]')
+else
+    echo "[$DATE] ❌ .github_token nicht gefunden" | tee -a "$LOG_FILE"
+    exit 1
+fi
+
 REPO_URL="https://${GITHUB_TOKEN}@github.com/danielkunstmann184-source/openclaw-backup.git"
 
 cd "$WORKSPACE" || exit 1
 
-# Ensure git remote is configured (in case of reinstall)
-git remote remove origin 2>/dev/null
-git remote add origin "$REPO_URL" 2>/dev/null || git remote set-url origin "$REPO_URL"
+# Git Remote setzen
+if ! git remote get-url origin &>/dev/null; then
+    git remote add origin "$REPO_URL"
+else
+    git remote set-url origin "$REPO_URL"
+fi
 
-# Configure git user if not set
-git config user.email "peter@openclaw.local" 2>/dev/null || true
-git config user.name "Peter (OpenClaw)" 2>/dev/null || true
+# Git User
+if ! git config --get user.email &>/dev/null; then
+    git config user.email "peter@openclaw.local"
+    git config user.name "Peter (OpenClaw)"
+fi
 
-# Add all changes
+# Add & Commit
 git add -A
-
-# Check if there are changes to commit
 if git diff --cached --quiet; then
-    echo "[$DATE] No changes to backup"
+    echo "[$DATE] ℹ️ Keine Änderungen" | tee -a "$LOG_FILE"
     exit 0
 fi
 
-# Commit with timestamp
-git commit -m "📦 Daily backup - $DATE
+git commit -m "📦 Daily backup - $DATE" || exit 1
 
-Changes:
-$(git diff --cached --stat | tail -1)
-
-Auto-committed by daily_backup.sh"
-
-# Push to GitHub
-if git push origin master; then
-    echo "[$DATE] ✅ Backup successful"
+# Push
+if git push origin master 2>&1 | tee -a "$LOG_FILE"; then
+    echo "[$DATE] ✅ Backup erfolgreich" | tee -a "$LOG_FILE"
 else
-    echo "[$DATE] ❌ Backup failed - trying force pull first"
-    git pull origin master --rebase || true
-    if git push origin master; then
-        echo "[$DATE] ✅ Backup successful after rebase"
-    else
-        echo "[$DATE] ❌ Backup failed permanently"
-        exit 1
-    fi
+    echo "[$DATE] ❌ Backup fehlgeschlagen" | tee -a "$LOG_FILE"
+    exit 1
 fi

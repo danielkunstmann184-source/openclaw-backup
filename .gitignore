@@ -1,23 +1,6 @@
-# API Keys und sensible Daten
-.env*
-.openclaw/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs
-*.log
+# Secrets - Nicht in Git!
+.github_token
+.env.notion
+.env.api
+*.key
+*.secret

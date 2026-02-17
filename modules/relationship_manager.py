@@ -186,6 +186,10 @@ class RelationshipManager:
         
         return neglected
     
+    def get_neglected_relationships(self):
+        """Alias für check_neglected_relationships für Kompatibilität"""
+        return self.check_neglected_relationships()
+    
     def check_upcoming_birthdays(self, days_ahead=30):
         """
         Kommende Geburtstage

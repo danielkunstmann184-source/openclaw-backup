@@ -76,3 +76,18 @@
   - Bester Freund von Max seit Kindheitstagen
   - War beim Holland-Junggesellenabschied 2025 dabei
   - Teil der Holland-Crew
+
+---
+
+## Frau Weichert (Chefin) 👩‍💼
+- **Beziehung**: Chefin (Creditreform)
+- **Wichtigkeit**: 3/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-17
+- **Kommunikationsstil**: Kontrollierend, micromanaged
+- **Notizen**:
+  - Nur Dienstag bis Donnerstag im Büro
+  - Misst sich in Vorgänge ein, die Daniel bearbeitet
+  - Delegiert Vorgänge zurück an Daniel, die eigentlich ihre Betreuung sind
+  - Aktuell nervig / frustrierend
+

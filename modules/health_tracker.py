@@ -41,6 +41,10 @@ class HealthTracker:
         self.save_data()
         return "💪 Gym-Session geloggt! Gut gemacht!"
     
+    def log_gym(self, duration=None, notes=""):
+        """Alias für log_gym_session für Kompatibilität"""
+        return self.log_gym_session(duration_minutes=duration, notes=notes)
+    
     def log_sleep(self, hours, quality=5):
         """Logge Schlafdauer und Qualität"""
         entry = {

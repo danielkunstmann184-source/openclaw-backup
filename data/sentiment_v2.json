@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-02-17T09:04:37.418150",
+    "message_preview": "Fuck, alles stress!",
+    "sentiment": "negative",
+    "stress_level": 6,
+    "energy_level": 3,
+    "emotional_state": "stressed",
+    "method": "simple",
+    "confidence": 0.6
+  },
+  {
+    "timestamp": "2026-02-17T09:04:37.418312",
+    "message_preview": "Geil, super gelaufen!",
+    "sentiment": "positive",
+    "stress_level": 3,
+    "energy_level": 7,
+    "emotional_state": "happy",
+    "method": "simple",
+    "confidence": 0.6
+  },
+  {
+    "timestamp": "2026-02-17T09:04:37.418424",
+    "message_preview": "Was steht heute an?",
+    "sentiment": "neutral",
+    "stress_level": 5,
+    "energy_level": 5,
+    "emotional_state": "neutral",
+    "method": "simple",
+    "confidence": 0.6
+  },
+  {
+    "timestamp": "2026-02-17T09:04:37.419167",
+    "message_preview": "Ich bin so m\u00fcde",
+    "sentiment": "negative",
+    "stress_level": 3,
+    "energy_level": 4,
+    "emotional_state": "stressed",
+    "method": "simple",
+    "confidence": 0.6
+  },
+  {
+    "timestamp": "2026-02-17T09:04:37.419611",
+    "message_preview": "Das war echt schei\u00dfe",
+    "sentiment": "negative",
+    "stress_level": 3,
+    "energy_level": 4,
+    "emotional_state": "stressed",
+    "method": "simple",
+    "confidence": 0.6
+  }
+]

@@ -4,6 +4,33 @@
 
 ---
 
+## 📚 Erkenntnisse über KI/Memory-Systeme
+
+### Wie KI-Agenten sich erinnern (18.02.2026)
+**Quelle:** damiangalarza.com - "How AI Agents Remember Things"
+
+**Kern-Erkenntnis:** Storage ist einfach - das Schwierige ist zu wissen, **wann zu schreiben und wann zu laden**.
+
+**Die 3 Memory-Typen:**
+1. **Episodic** - Ereignisse (Tageslogs)
+2. **Semantic** - Fakten/Präferenzen (MEMORY.md)
+3. **Procedural** - Workflows/Routinen
+
+**4 Mechanismen bei OpenClaw:**
+- Bootstrap Loading (Session-Start)
+- Pre-Compaction Flush (vor Context-Überlauf)
+- Session Snapshot (bei /new)
+- "Remember this" (manuelles Speichern)
+
+**Anwendung auf unser System:**
+- ✅ Unser Setup deckt alle 3 Typen ab
+- ✅ TELOS-System = Semantic Memory
+- ✅ Tagesdateien = Episodic Memory
+- ✅ Cron-Jobs = "when to load"
+- ✅ Automatisches Speichern = "when to write"
+
+---
+
 ## 🏥 Neue Fähigkeiten
 
 ### Erste-Hilfe-Ausbildung (18.02.2026)

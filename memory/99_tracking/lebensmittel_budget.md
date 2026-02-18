@@ -13,12 +13,13 @@
 | 2026-02-01 | Lidl Friedrichroda | 28,97 € | Daniel | EC-Cash |
 | 2026-02-03 | Lidl Friedrichroda | 26,35 € | Daniel | EC-Cash |
 | 2026-02-07? | Lidl Friedrichroda | 42,61 € | Daniel | EC-Cash |
+| 2026-02-17 | Einkauf (Lebensmittel) | ~30,00 € | Juliane | |
 | 2026-02-?? | Hello Fresh | ~50,00 € | Daniel | Schätzung |
 | 2026-02-?? | Hello Fresh | ~50,00 € | Daniel | Schätzung |
 
-**Summe bisher:** ~225,64 €
-**Restbudget:** ~174,36 €
-**Tageslimit (Restmonat):** ~6,70 €/Tag
+**Summe bisher:** ~255,64 €
+**Restbudget:** ~144,36 €
+**Tageslimit (Restmonat):** ~14,44 €/Tag
 
 ---
 
@@ -36,4 +37,4 @@
 
 ---
 
-*Letzte Aktualisierung: 2026-02-08*
+*Letzte Aktualisierung: 2026-02-18*

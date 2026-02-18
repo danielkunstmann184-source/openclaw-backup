@@ -55,6 +55,10 @@ Strategische Unterstützung bei laufendem Arbeitsrechtlichem Verfahren.
 
 ### Aktive Angebote
 
+#### Dieser Monat (Februar 2026)
+- **Ziel:** 3 neue Mitglieder + 1 CrefoZert
+- **Status:** In Bearbeitung
+
 #### Blankenhain
 - **Status:** 🟡 Entscheidung ausstehend (bis Freitag, 21.02.)
 - **Wert:** 1.080€ Mitgliedschaft / 540€ Provision
@@ -68,6 +72,11 @@ Strategische Unterstützung bei laufendem Arbeitsrechtlichem Verfahren.
 #### Ettersberg
 - **Status:** 🟢 Erfolg - Kunde behalten
 - **Ergebnis:** Kündigung zurückgenommen
+
+### Jahresziele 2026
+- **Mitglieder:** 60 neue Mitglieder
+- **CrefoZerts:** 12 Zertifizierungen
+- **Position:** Aufstieg Richtung Vertriebsleiter
 
 ### Wöchentliche Aktivitäten
 - [ ] Kundenbesuche planen
@@ -83,16 +92,20 @@ Strategische Unterstützung bei laufendem Arbeitsrechtlichem Verfahren.
 **Priorität:** Mittel
 **Zeithorizont:** Kontinuierlich
 
-### Lauftraining (mit Michael)
-- **Ziel:** Halbmarathon-Training
-- **Status:** Gestartet
-- **Termine:** Regelmäßige Laufrunden (Di/Do)
-
 ### Erste-Hilfe-Ausbildung
-- **Status:** 🟡 In Progress (heute, 18.02.2026)
+- **Status:** ✅ **ERLEDIGT** (18.02.2026)
 - **Ort:** DRK Gotha
 - **Zeit:** 08:00-16:00 Uhr
 - **Kosten:** 60€
+- **Kennziffer:** 202601DAEA
+
+### Lauftraining (mit Michael)
+- **Ziel:** Halbmarathon-Training
+- **Status:** Aktiv - 2 Läufe absolviert
+- **Läufe:**
+  - 16.02.2026: 10,01 km in 55:04 (5:30/km)
+  - 18.02.2026: 5,01 km in 24:52 (4:58/km)
+- **Termine:** Regelmäßige Laufrunden (Di/Do)
 
 ### Sauna-Routine
 - **Häufigkeit:** 2-3x pro Woche
@@ -122,4 +135,4 @@ Strategische Unterstützung bei laufendem Arbeitsrechtlichem Verfahren.
 
 ---
 
-*Letzte Aktualisierung: 2026-02-18*
+*Letzte Aktualisierung: 2026-02-18 (18:28)*

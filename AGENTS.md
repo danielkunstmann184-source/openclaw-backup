@@ -12,8 +12,11 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `memory/00_telos/README.md` — **TELOS-System (Ziele, Werte, Identität)** ⚠️
+4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+
+**CRITICAL:** If you crash, restart, or start a new session — ALWAYS load the TELOS-System first. It contains the essential context about Daniel's goals, values, and identity.
 
 Don't ask permission. Just do it.
 
@@ -34,6 +37,7 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - You can **read, edit, and update** MEMORY.md freely in main sessions
 - Write significant events, thoughts, decisions, opinions, lessons learned
 - This is your curated memory — the distilled essence, not raw logs
+- **TELOS-System:** Always check `memory/00_telos/` for goals, values, and identity
 - Over time, review your daily files and update MEMORY.md with what's worth keeping
 
 ### 📝 Write It Down - No "Mental Notes"!

@@ -4,6 +4,16 @@
 
 ---
 
+## 🏥 Neue Fähigkeiten
+
+### Erste-Hilfe-Ausbildung (18.02.2026)
+- **Erkenntnis:** Erste Hilfe ist einfacher als gedacht, aber Übung ist entscheidend
+- **Lesson:** ABCDE-Schema strukturiert das Handeln in Notsituationen
+- **Fähigkeit:** Betrieblicher Ersthelfer (DRK-zertifiziert)
+- **Anwendung:** Im Alltag, bei Arbeit, unterwegs - immer bereit zu helfen
+
+---
+
 ## 🧠 Lebenslehren
 
 ### Über Sucht und Bewältigung

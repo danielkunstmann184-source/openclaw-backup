@@ -42,7 +42,6 @@ Add whatever helps you do your job. This is your cheat sheet.
 ---
 
 
-
 ## TTS (Text-to-Speech)
 
 - **System:** Sherpa ONNX (lokal, offline)
@@ -56,3 +55,41 @@ Add whatever helps you do your job. This is your cheat sheet.
 - **Deaktivierung:** "Peter, Autofahrt beendet"
 - **Effekt:** Kurze Antworten + automatische Sprachausgabe
 - **Konfiguration:** `memory/04_preferences/auto_mode.md`
+
+## 🔔 Cron-Jobs - Best Practices
+
+Für **zuverlässige** Erinnerungen:
+
+| Einstellung | Wert | Warum |
+|-------------|------|-------|
+| `sessionTarget` | `isolated` | Funktioniert auch ohne aktive Main-Session |
+| `wakeMode` | `now` | Sofortige Ausführung, kein Warten auf Heartbeat |
+| `delivery.mode` | `announce` | Sichtbare Notification |
+| `delivery.channel` | `telegram` | Direkte Zustellung |
+| `payload.kind` | `agentTurn` | Volle Agent-Funktionalität |
+
+**Beispiel-Struktur:**
+```json
+{
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "delivery": {
+    "mode": "announce",
+    "channel": "telegram"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Erinnerungstext...",
+    "model": "kimi-coding/k2p5"
+  }
+}
+```
+
+## 🚀 Sofort-Speichern
+
+Nutze: `./scripts/save_day.sh` oder sage "Speichern"
+
+Persistiert sofort:
+- `memory/YYYY-MM-DD.md` (Tagesdatei)
+- Git-Commit
+- GitHub-Push

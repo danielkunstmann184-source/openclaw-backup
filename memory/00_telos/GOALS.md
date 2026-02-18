@@ -7,9 +7,11 @@
 ## 🎯 Kurzfristige Ziele (2026)
 
 ### Beruflich
+- [x] Erste-Hilfe-Kurs absolvieren (Februar 2026) ✅ **ERLEDIGT**
 - [ ] Creditreform Kundenakquise erfolgreich aufbauen
+  - **Dieser Monat (Februar):** Noch 3 Mitglieder + 1 CrefoZert abrechnen
+  - **2026 Gesamtziel:** 60 Mitglieder + 12 CrefoZerts
 - [ ] Provisionen generieren (Blankenhain 540€ in Aussicht)
-- [ ] Erste-Hilfe-Kurs absolvieren (Februar 2026)
 
 ### Persönlich
 - [ ] Regelmäßiges Lauftraining mit Michael (Halbmarathon-Training)
@@ -40,7 +42,12 @@
 
 ## 🎯 Langfristige Ziele (Lebensziele)
 
-*Noch zu definieren...*
+### Beruflich
+- [ ] **Vertriebsleiter bei Creditreform werden**
+- [ ] **Jahresgehalt: 80.000 - 100.000 € erreichen**
+
+### Weitere Bereiche
+*Folgen später...*
 
 ---
 
@@ -62,4 +69,4 @@ Siehe auch: [../03_projects/aktiv.md](../03_projects/aktiv.md)
 
 ---
 
-*Letzte Aktualisierung: 2026-02-18*
+*Letzte Aktualisierung: 2026-02-18 (18:26)*

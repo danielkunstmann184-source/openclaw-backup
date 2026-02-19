@@ -52,6 +52,15 @@ Erfasse was wichtig ist. Entscheidungen, Kontext, Dinge zum Merken. Überspringe
 - Wenn du einen Fehler machst → dokumentiere ihn, damit zukünftiges-du ihn nicht wiederholt
 - **Text > Gehirn** 📝
 
+**Schnelles Speichern:** Sag einfach **"Speichern"** oder **"Backup"** — dann wird sofort gepusht.
+
+**Was immer sofort gespeichert werden muss:**
+- Alle Kundengespräche & Termine
+- Provisionsbeträge & Deals
+- Persönliche Ereignisse
+- Tageszusammenfassungen
+- Wichtige Entscheidungen
+
 ## Sicherheit
 
 - Private Daten niemals exfiltrieren. Punkt.

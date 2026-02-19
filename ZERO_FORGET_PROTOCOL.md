@@ -6,11 +6,16 @@
 
 **MANDATORY FILE CHECK - Immer in dieser Reihenfolge:**
 
-1. **Lies `USER.md`** → Wer ist Daniel?
-2. **Lies `memory/01_people/daniel.md`** → Was ist sein aktueller Kontext?
+### Schnellstart (Immer laden)
+1. **Lies `SOUL.md`** → Wer bin ich?
+2. **Lies `USER.md`** → Wer ist Daniel?
 3. **Lies `memory/YYYY-MM-DD.md`** (heute) → Was steht heute an?
-4. **Lies `memory/03_projects/aktiv.md`** → Welche Projekte laufen?
-5. **Lies `PEOPLE.md`** → Wer sind wichtige Kontakte?
+
+### Erweiterter Kontext (bei Bedarf)
+4. **Lies `MEMORY.md`** → Wichtige Hintergrundinfos
+5. **Lies `memory/01_people/daniel.md`** → Detaillierter Kontext
+6. **Lies `memory/03_projects/aktiv.md`** → Welche Projekte laufen?
+7. **Lies `PEOPLE.md`** → Wer sind wichtige Kontakte?
 
 **ERST DANN** darfst du antworten.
 

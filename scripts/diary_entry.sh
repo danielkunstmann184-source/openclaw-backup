@@ -6,7 +6,7 @@ WORKSPACE="/home/ubuntu/.openclaw/workspace"
 
 # Token aus .env.notion laden (nicht hardcoded!)
 if [ -f "$WORKSPACE/.env.notion" ]; then
-    NOTION_TOKEN=$(cat "$WORKSPACE/.env.notion" | tr -d '[:space:]')
+    NOTION_TOKEN=$(grep "^NOTION_API_KEY=" "$WORKSPACE/.env.notion" | cut -d'=' -f2 | tr -d '[:space:]')
 else
     echo "❌ .env.notion nicht gefunden"
     exit 1

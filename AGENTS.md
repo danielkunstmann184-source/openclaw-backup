@@ -8,15 +8,18 @@ If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out w
 
 ## Every Session
 
-Before doing anything else:
+### Quick Start (Always Load)
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/00_telos/README.md` — **TELOS-System (Ziele, Werte, Identität)** ⚠️
-4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 
-**CRITICAL:** If you crash, restart, or start a new session — ALWAYS load the TELOS-System first. It contains the essential context about Daniel's goals, values, and identity.
+### Conditional Loading
+
+- **TELOS-System** (`memory/00_telos/README.md`) — Check weekly or when discussing goals/values
+- **MEMORY.md** — Only in MAIN SESSION (direct chats), not in shared contexts (Discord/groups)
+
+**CRITICAL:** If you crash, restart, or start a new session — focus on the Quick Start first. TELOS contains essential context but the daily context is more urgent.
 
 Don't ask permission. Just do it.
 
@@ -121,7 +124,18 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
-**🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
+### Available Tools
+
+| Tool | Purpose | When to use |
+|------|---------|-------------|
+| **Brave Search** | Web research | When you need current info, prices, news |
+| **Resend** | Send emails | Notifications, reports (test-mode only) |
+| **Weather (wttr.in)** | Weather data | For briefings, no API key needed |
+| **Notion** | Tagebuch entries | Daily diary entries |
+| **TTS (Sherpa)** | Voice messages | Auto-mode, stories |
+| **Auto-People-Update** | PEOPLE.md sync | Runs Saturdays 06:10 via cron |
+
+**🎭 Voice Storytelling:** Use TTS for stories, movie summaries, "storytime" moments! Way more engaging. Surprise with funny voices.
 
 **📝 Platform Formatting:**
 
@@ -159,19 +173,20 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 
 **Things to check (rotate through these, 2-4 times per day):**
 
-- **Emails** - Any urgent unread messages?
-- **Calendar** - Upcoming events in next 24-48h?
-- **Mentions** - Twitter/social notifications?
-- **Weather** - Relevant if your human might go out?
+- **Backup status** - Check `logs/backup.log` - last backup OK?
+- **Git status** - Uncommitted changes? Push if needed
+- **Cron jobs** - Any failed jobs? (`cron list`)
+- **API Keys** - Valid? (check if Brave/Notion/Resend work)
+- **Memory files** - Today's file exists? Recent entries saved?
 
 **Track your checks** in `memory/heartbeat-state.json`:
 
 ```json
 {
   "lastChecks": {
-    "email": 1703275200,
-    "calendar": 1703260800,
-    "weather": null
+    "backup": 1703275200,
+    "git": 1703260800,
+    "cron": null
   }
 }
 ```
@@ -210,6 +225,24 @@ Periodically (every few days), use a heartbeat to:
 Think of it like a human reviewing their journal and updating their mental model. Daily files are raw notes; MEMORY.md is curated wisdom.
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
+
+## 🚀 Commit & Push Rule
+
+**After EVERY file change:**
+
+```bash
+git add -A
+git commit -m "descriptive message"
+git push origin master
+```
+
+**No accumulation of changes.** Push immediately to ensure backup. This applies to:
+- File edits
+- New files
+- Deletions
+- Config changes
+
+Session storage = NOT EXISTENT. Only committed files survive restarts.
 
 ## Make It Yours
 

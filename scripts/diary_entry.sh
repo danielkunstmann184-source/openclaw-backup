@@ -36,7 +36,7 @@ case $WEEKDAY in
     Sunday) WEEKDAY_GER="Sonntag" ;;
 esac
 
-# Prüfe ob Eintrag für heute bereits existiert (einfache Prüfung via Titel)
+# Prüfe ob Eintrag für heute bereits existiert
 EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
   -H "Authorization: Bearer $NOTION_TOKEN" \
   -H "Notion-Version: 2022-06-28" \
@@ -48,9 +48,12 @@ EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/que
         \"equals\": \"${DATE_STR}_Tagesreflexion\"
       }
     }
-  }" | grep -o '"results":\[\]' || echo "not_found")
+  }")
 
-if [ "$EXISTING" != "not_found" ]; then
+# Prüfe ob results Array nicht leer ist
+if echo "$EXISTING" | grep -q '"results":\[\]'; then
+    echo "📝 Eintrag für $DATE_STR existiert noch nicht - erstelle neu..."
+else
     echo "ℹ️ Eintrag für $DATE_STR existiert bereits"
     exit 0
 fi

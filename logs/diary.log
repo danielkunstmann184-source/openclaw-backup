@@ -12,3 +12,4 @@ To https://github.com/danielkunstmann184-source/openclaw-backup.git
    02a21ca..1dfc386  master -> master
 [2026-02-18 06:26] ✅ Backup gepusht
 [2026-02-18 06:26] ✓ Tages-Speicherung abgeschlossen
+❌ Fehler beim Erstellen: {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d86048b9-6366-4ca0-a1e5-e95f88624acf"}

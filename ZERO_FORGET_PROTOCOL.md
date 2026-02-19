@@ -44,10 +44,33 @@
 
 **Bei JEDEM Start:**
 1. `HEARTBEAT.md` lesen
-2. `REINSTALL_RECOVERY.md` prüfen
-3. Falls Workspace leer → `scripts/restore_from_backup.sh` ausführen
-4. Alle core .md Dateien laden (SOUL, USER, MEMORY)
-5. Aktuelles Datum prüfen → `memory/YYYY-MM-DD.md` lesen
+2. Falls Workspace leer → `scripts/restore_from_backup.sh` ausführen (siehe "Notfall-Wiederherstellung" unten)
+3. Alle core .md Dateien laden (SOUL, USER, MEMORY)
+4. Aktuelles Datum prüfen → `memory/YYYY-MM-DD.md` lesen
+
+---
+
+## 🚨 Notfall-Wiederherstellung (Post-Reinstall)
+
+**Wurde OpenClaw neu installiert?**
+
+WENN JA → Sofort ausführen:
+```bash
+/home/ubuntu/.openclaw/workspace/scripts/restore_from_backup.sh
+```
+
+### Danach prüfen:
+- [ ] USER.md enthält Daniel's Daten
+- [ ] memory/ Ordner vorhanden
+- [ ] Alle .md Dateien vorhanden
+- [ ] Cron-Jobs aktiv (`crontab -l`)
+
+### Falls Restore fehlschlägt:
+1. Token prüfen: Siehe `.github_token` im Workspace
+2. Repo-URL: `https://github.com/danielkunstmann184-source/openclaw-backup`
+3. Manuelles Clonen: `git clone <token>@github.com/...`
+
+**WICHTIG:** GitHub Token befindet sich in `.github_token` — nicht in diesem Dokument speichern!
 
 ---
 

@@ -1,10 +1,10 @@
-# USER.md - About Your Human
+# USER.md - Über Daniel
 
-*Learn about the person you're helping. Update this as you go.*
+*Kurzprofil des Menschen, dem ich helfe. Details zu Familie, Kontakten und Beziehungen siehe PEOPLE.md und memory/01_people/*
 
 - **Name:** Daniel Kunstmann
-- **What to call them:** Daniel
-- **Pronouns:** er/ihm
+- **Anrede:** Daniel
+- **Pronomen:** er/ihm
 - **Timezone:** Europe/Berlin (GMT+1)
 - **Username:** @dakunst_real
 - **Wohnort:** Friedrichroda, Thüringen
@@ -13,6 +13,9 @@
 
 Daniel ist ein pragmatischer Mensch, der direkte Kommunikation schätzt. Er hat keine Zeit für Chatbot-Floskeln oder überflüssige Höflichkeiten. Er erwartet, dass ich proaktiv arbeite, selbstständig Lösungen finde und seine Daten konsistent verwalte.
 
-Er ist Vertriebler bei Creditreform, hat zwei Kinder (Fin und Jonas) mit seiner Partnerin Juliane und pflegt aktiv seine Beziehungen. Die Arbeitsschutzklage seiner Mutter Iwona ist ein wichtiges laufendes Anliegen.
+Er ist Vertriebler bei Creditreform. Wichtige Personen und Beziehungen sind dokumentiert in:
+- **PEOPLE.md** — Übersicht über Kontakte
+- **memory/01_people/** — Detaillierte Personenprofile
+- **memory/01_people/daniel.md** — Sein eigenes ausführliches Profil
 
 Wichtig: Daniel hat viel Zeit investiert, sein komplettes Leben in diesem Workspace zu dokumentieren. Das Repository ist seine digitale Erinnerung.

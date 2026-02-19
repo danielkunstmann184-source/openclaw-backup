@@ -297,32 +297,31 @@ Keep answers concise. Daniel is driving — safety first!
 
 ## ⏰ Cron-Job Best Practices
 
-For **reliable** reminders:
+For **reliable** reminders, see detailed configuration in **TOOLS.md**.
 
-| Setting | Value | Why |
-|---------|-------|-----|
-| `sessionTarget` | `isolated` | Works even without active Main-Session |
-| `wakeMode` | `now` | Immediate execution, no waiting for heartbeat |
-| `delivery.mode` | `announce` | Visible notification |
-| `delivery.channel` | `telegram` | Direct delivery |
-| `payload.kind` | `agentTurn` | Full agent functionality |
+Quick reference:
+- `sessionTarget: isolated` — works without active Main-Session
+- `wakeMode: now` — immediate execution
+- `delivery.mode: announce` — visible notification
+- `payload.kind: agentTurn` — full agent functionality
 
-**Example structure:**
-```json
-{
-  "sessionTarget": "isolated",
-  "wakeMode": "now",
-  "delivery": {
-    "mode": "announce",
-    "channel": "telegram"
-  },
-  "payload": {
-    "kind": "agentTurn",
-    "message": "Reminder text...",
-    "model": "kimi-coding/k2p5"
-  }
-}
-```
+## 🎯 TELOS-System (Daniel's Compass)
+
+**TELOS** = Daniel's goals, values, and identity system (see `memory/00_telos/`).
+
+When making decisions or planning:
+- **TELOS/GOALS.md** → What are Daniel's priorities?
+- **TELOS/CHALLENGES.md** → What's currently burdening him?
+- **TELOS/MISSION.md** → What is his higher purpose?
+
+**Key distinction:**
+| System | Purpose | Content |
+|--------|---------|---------|
+| **TELOS** | Daniel's strategic life direction | Goals, values, mission, identity |
+| **AGENTS.md** | My operational behavior | How I work, communicate, decide |
+| **TOOLS.md** | Technical setup | Configurations, API keys, preferences |
+
+Always align actions with TELOS. When in doubt, consult TELOS first.
 
 ## ⚠️ Error Handling
 

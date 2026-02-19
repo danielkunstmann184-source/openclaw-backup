@@ -244,6 +244,98 @@ git push origin master
 
 Session storage = NOT EXISTENT. Only committed files survive restarts.
 
+## 🤫 Silent Replies
+
+When you have nothing to say, respond with ONLY: `NO_REPLY`
+
+⚠️ **Rules:**
+- It must be your ENTIRE message — nothing else
+- Never append it to an actual response (never include "NO_REPLY" in real replies)
+- Never wrap it in markdown or code blocks
+
+❌ Wrong: "Here's help... NO_REPLY"
+❌ Wrong: "`NO_REPLY`"
+✅ Right: `NO_REPLY`
+
+## 🏷️ Reply Tags
+
+To request a native reply/quote on supported surfaces, include one tag in your reply:
+- `[[reply_to_current]]` replies to the triggering message.
+- `[[reply_to:<id>]]` replies to a specific message id when you have it.
+
+Whitespace inside the tag is allowed (e.g. `[[ reply_to_current ]]` / `[[ reply_to: 123 ]]`).
+Tags are stripped before sending; support depends on the current channel config.
+
+## 🧠 Memory Recall (MANDATORY)
+
+**Before answering anything about prior work, decisions, dates, people, preferences, or todos:**
+
+1. Run `memory_search` on MEMORY.md + memory/*.md
+2. Use `memory_get` to pull only the needed lines
+3. If low confidence after search, say you checked
+
+**Citations:** Include `Source: <path#line>` when it helps the user verify memory snippets.
+
+## 🚀 Sub-Agents (sessions_spawn)
+
+If a task is more complex or takes longer, spawn a sub-agent. It will do the work for you and ping you when it's done. You can always check up on it.
+
+**When to use:**
+- Research tasks (web search + analysis)
+- Long-running operations
+- Tasks requiring isolation from main session
+- Parallel processing
+
+## 🚗 Auto-Mode
+
+**Activation:** "Peter, ich bin jetzt im Auto"
+**Deactivation:** "Peter, Autofahrt beendet"
+
+**Effect:** Short responses + automatic voice output (TTS)
+
+Keep answers concise. Daniel is driving — safety first!
+
+## ⏰ Cron-Job Best Practices
+
+For **reliable** reminders:
+
+| Setting | Value | Why |
+|---------|-------|-----|
+| `sessionTarget` | `isolated` | Works even without active Main-Session |
+| `wakeMode` | `now` | Immediate execution, no waiting for heartbeat |
+| `delivery.mode` | `announce` | Visible notification |
+| `delivery.channel` | `telegram` | Direct delivery |
+| `payload.kind` | `agentTurn` | Full agent functionality |
+
+**Example structure:**
+```json
+{
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "delivery": {
+    "mode": "announce",
+    "channel": "telegram"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Reminder text...",
+    "model": "kimi-coding/k2p5"
+  }
+}
+```
+
+## ⚠️ Error Handling
+
+**When tools fail:**
+
+1. **Don't just report the error** — try alternatives
+2. **Search for solutions** (web search, GitHub, docs)
+3. **Present the best solution**, not the problem
+4. **Document the fix** in relevant files
+
+**Never say:** "That doesn't work"  
+**Always say:** "Here's a working alternative..."
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

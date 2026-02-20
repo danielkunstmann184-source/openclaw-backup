@@ -14,19 +14,20 @@
 | 14.02.2026 | Einkauf | 38 € | Lebensmittel |
 | 14.02.2026 | HelloFresh | 50 € | Lebensmittel |
 | 19.02.2026 | Lidl | 14,68 € | Lebensmittel |
-| | **Bisher ausgegeben** | **~328,32 €** | |
+| 20.02.2026 | Lidl (Snacks) | 8,14 € | Lebensmittel |
+| | **Bisher ausgegeben** | **~336,46 €** | |
 
 ## Verbleibend
-- **Verfügbar:** ~71,68 € (von 400€)
-- **Tage bis Monatsende:** ~9 Tage
-- **Tagesbudget verbleibend:** ~7,96 €/Tag
+- **Verfügbar:** ~63,54 € (von 400€)
+- **Tage bis Monatsende:** ~8 Tage
+- **Tagesbudget verbleibend:** ~7,94 €/Tag
 
 ## Status
 🔴 **KRITISCH** — Budget fast aufgebraucht!
-- 82% bereits ausgegeben
-- Nur noch ~72€ für 9 Tage
+- 84% bereits ausgegeben
+- Nur noch ~64€ für 8 Tage
 - Empfehlung: Sehr sparsam einkaufen oder Budget erhöhen
 
 ---
 
-*Letzte Aktualisierung: 19.02.2026*
+*Letzte Aktualisierung: 20.02.2026*

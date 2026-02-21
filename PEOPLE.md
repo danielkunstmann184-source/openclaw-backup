@@ -4,7 +4,7 @@
 - **Beziehung**: Partnerin / Ehefrau
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 12.04.1995
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 - **Kommunikationsstil**: Direkt, pragmatisch
 - **Interessen**: 
   - LOVES: Familie, Ordnung, Planung
@@ -16,19 +16,19 @@
 - **Beziehung**: Sohn
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 30.10.2015
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 
 ## Jonas (Sohn) 👶
 - **Beziehung**: Sohn
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 05.05.2023
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 
 ## Michael (Freund) 🤝
 - **Beziehung**: Bester Freund
 - **Wichtigkeit**: 9/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 - **Notizen**:
   - Seit 20 Jahren befreundet
   - Aktuell etwas distanziert
@@ -37,13 +37,13 @@
 - **Beziehung**: Mutter
 - **Wichtigkeit**: 8/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 
 ## Ralf (Vater) 👨
 - **Beziehung**: Vater
 - **Wichtigkeit**: 7/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-15
+- **Letzter Kontakt**: 2026-02-21
 
 ---
 
@@ -90,4 +90,32 @@
   - Misst sich in Vorgänge ein, die Daniel bearbeitet
   - Delegiert Vorgänge zurück an Daniel, die eigentlich ihre Betreuung sind
   - Aktuell nervig / frustrierend
+
+## Doreen
+- **Beziehung**: Arbeitskollegin
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-21
+- **Notizen**: Creditreform, Erste Hilfe Kurs am 18.02.
+
+## Ramona
+- **Beziehung**: Schwiegermutter
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-21
+- **Notizen**: Mutter von Juliane
+
+## Steffen
+- **Beziehung**: Schwiegervater
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-21
+- **Notizen**: Vater von Juliane
+
+## Susanne
+- **Beziehung**: Stiefmutter
+- **Wichtigkeit**: 4/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-21
+- **Notizen**: Partnerin von Ralf
 

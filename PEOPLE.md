@@ -47,7 +47,7 @@
 
 ---
 
-## Patricia (Schwester) 👩‍❤️‍👨
+## Patrizia (Schwester) 👩‍❤️‍👨
 - **Beziehung**: Schwester
 - **Wichtigkeit**: 9/10
 - **Geburtstag**: 02.09.1990
@@ -59,12 +59,12 @@
   - Wohnort: Ranstadt
 
 ## Max (Schwager) 🎩
-- **Beziehung**: Schwager (Mann deiner Schwester Patricia)
+- **Beziehung**: Schwager (Mann deiner Schwester Patrizia)
 - **Wichtigkeit**: 7/10
 - **Geburtstag**: Unbekannt
 - **Letzter Kontakt**: 2026-02-16
 - **Notizen**:
-  - Verheiratet mit Patricia (deiner Schwester)
+  - Verheiratet mit Patrizia (deiner Schwester)
   - Kinder: Anton und Ella
   - Wohnort: Ranstadt
   - Hat letztes Jahr (2025) in Holland Junggesellenabschied gefeiert
@@ -81,21 +81,21 @@
   - Teil der Holland-Crew
 
 ## Anton (Neffe) 👦
-- **Beziehung**: Neffe (Sohn von Patricia und Max)
+- **Beziehung**: Neffe (Sohn von Patrizia und Max)
 - **Wichtigkeit**: 6/10
 - **Geburtstag**: Unbekannt
 - **Letzter Kontakt**: 2026-02-16
 - **Notizen**:
-  - Sohn von Patricia (Schwester) und Max (Schwager)
+  - Sohn von Patrizia (Schwester) und Max (Schwager)
   - Wohnort: Ranstadt
 
 ## Ella (Nichte) 👧
-- **Beziehung**: Nichte (Tochter von Patricia und Max)
+- **Beziehung**: Nichte (Tochter von Patrizia und Max)
 - **Wichtigkeit**: 6/10
 - **Geburtstag**: Unbekannt
 - **Letzter Kontakt**: 2026-02-16
 - **Notizen**:
-  - Tochter von Patricia (Schwester) und Max (Schwager)
+  - Tochter von Patrizia (Schwester) und Max (Schwager)
   - Wohnort: Ranstadt
 
 ## Fabian (Bester Freund von Max) 🎣

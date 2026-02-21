@@ -89,126 +89,94 @@ Erinnerung: "Stromrechnung über 142€ fällig in 3 Tagen"
 
 ---
 
-## Speicher-Strategie: Cloud-First
+## Speicher-Strategie: Bestehende Dropbox nutzen
 
-**Wichtig:** Dokumente werden NICHT nur lokal gespeichert, sondern primär in der Cloud für:
-- ✅ Zugriff von überall (auch unterwegs)
-- ✅ Backup falls Laptop kaputt/Festplatte defekt
-- ✅ Synchronisation zwischen mehreren Geräten
+**Status:** Daniel hat bereits Dropbox-Abo (bezahlt) mit unsortierten Fotos/Videos
 
-### Cloud-Optionen
-
-| Anbieter | Speicher | Preis/Monat | MCP-Server | Verschlüsselung |
-|----------|----------|-------------|------------|-----------------|
-| **Google Drive** | 15 GB (kostenlos) | €0-10 | ✅ Google Drive MCP | Client-seitig |
-| **Dropbox** | 2 GB (kostenlos) | €0-12 | ✅ Dropbox MCP | Client-seitig |
-| **OneDrive** | 5 GB (kostenlos) | €0-7 | ✅ OneDrive MCP | Client-seitig |
-| **iCloud Drive** | 5 GB (kostenlos) | €0-10 | ⚠️ Eingeschränkt | Client-seitig |
-| **pCloud** | 10 GB (kostenlos) | €0-10 | ❌ Kein MCP | Zero-Knowledge |
-| **Synology NAS + Cloud** | Eigen | €0 | ✅ Filesystem MCP | Selbst kontrolliert |
-
-### Empfohlene Lösung: Google Drive + Lokaler Cache
-
-**Warum Google Drive?**
-- 15 GB kostenlos (für Dokumente ausreichend)
-- Beste MCP-Server-Unterstützung
-- Zuverlässige Sync-Clients
-- Gute Suche (auch ohne KI)
-
-**Architektur:**
-```
-Scanner/Handy
-     ↓
-Google Drive (Cloud-Original)
-     ↓
-Laptop/PC (lokaler Cache)
-     ↓
-MCP-Server (Filesystem MCP)
-     ↓
-OpenClaw-Agent (KI-Zugriff)
-```
-
-### Backup-Strategie (3-2-1 Regel)
-
-| Ebene | Speicherort | Art |
-|-------|-------------|-----|
-| **Original** | Google Drive | Primär (Cloud) |
-| **Kopie 1** | Laptop | Lokaler Cache |
-| **Kopie 2** | USB-Stick / externes HDD | Offline-Backup |
-
-**Automatisierung:**
-- Google Drive Sync = Echtzeit
-- Rclone/Restic = Nightly Backup auf externes HDD
+**Ziel:** Dropbox strukturieren + dedizierter Bereich für Dokumente
 
 ---
 
-## Hardware-Setup (Cloud-First)
+## Dropbox-Struktur (Vorschlag)
 
-### Option A: Minimal (Cloud-only)
-- **Scanner:** Handy + Adobe Scan (speichert direkt in Google Drive)
-- **Speicher:** Google Drive 15 GB (kostenlos)
-- **KI:** OpenClaw auf AWS (wie jetzt) oder Laptop
-- **Backup:** Google Drive + optional USB-Stick
-- **Kosten:** ~0€
+```
+Dropbox/
+├── 📁 01_DOKUMENTE/              # ← NEU: Wichtige Dokumente (KI-verwaltet)
+│   ├── 01_Finanzen/
+│   │   ├── Steuern/
+│   │   ├── Versicherungen/
+│   │   └── Bank/
+│   ├── 02_Arbeit/
+│   │   ├── Creditreform/
+│   │   ├── Vertraege/
+│   │   └── Loehne/
+│   ├── 03_Familie/
+│   │   ├── Kinder/
+│   │   ├── Gesundheit/
+│   │   └── Wohnung/
+│   ├── 04_Auto/
+│   ├── 05_Sonstiges/
+│   └── _INBOX/                   # Neue Dokumente hier rein
+│
+├── 📁 02_FOTOS_UND_VIDEOS/       # ← Bestehende Fotos/Videos strukturieren
+│   ├── 2026/
+│   │   ├── 01_Januar/
+│   │   ├── 02_Februar/
+│   │   └── ...
+│   ├── 2025/
+│   └── _UNSORTIERT/              # Bestehendes Chaos hier sammeln
+│
+└── 📁 03_SONSTIGES/              # Alles andere
+    ├── Downloads/
+├── _Backup/
+```
 
-### Option B: Komfort (Cloud + lokale KI)
-- **Scanner:** Fujitsu ScanSnap ix1600 (~400€) → direkt zu Google Drive
-- **Cloud:** Google Drive 100 GB (€2/Monat) oder 2 TB (€10/Monat)
-- **KI:** Laptop (dein 2019er) mit MCP-Servern
-- **Backup:** Google Drive + externes HDD (monatlich)
-- **Kosten:** ~400€ einmalig + €2-10/Monat
+### Trennung der Bereiche
 
-### Option C: Power-User (Self-hosted Cloud)
-- **Scanner:** Fujitsu ScanSnap ix1600 (~400€)
-- **Cloud:** Synology NAS mit Cloud-Access (~500€)
-- **Backup:** NAS + externe HDD + optional Backblaze B2
-- **KI:** Docker auf NAS (24/7 verfügbar)
-- **Kosten:** ~900€ einmalig + ~€5/Monat
+| Bereich | Ordner | MCP-Server | Nutzung |
+|---------|--------|------------|---------|
+| **Dokumente** | `01_DOKUMENTE/` | ✅ Dropbox MCP | KI-gestützte Verwaltung |
+| **Fotos/Videos** | `02_FOTOS_UND_VIDEOS/` | ❌ Kein MCP | Privat, manuell sortiert |
+| **Sonstiges** | `03_SONSTIGES/` | Optional | Downloads, Temp |
+
+**Wichtig:** Dokumente und private Medien **trennen** — Fotos brauchen keine KI-Verwaltung, Dokumente schon.
 
 ---
 
-## MCP-Server Stack (Cloud-Version)
+## Aufräum-Strategie für bestehende Dropbox
 
-```yaml
-# docker-compose.yml Beispiel
-services:
-  # Dokumenten-Verwaltung
-  filesystem-mcp:
-    image: mcp/filesystem
-    volumes:
-      - ~/Dokumente:/docs:ro
-  
-  # Vector-Datenbank für Suche
-  chroma:
-    image: chromadb/chroma
-    volumes:
-      - ./chroma-data:/data
-  
-  # OCR für gescannte PDFs
-  tesseract-mcp:
-    image: mcp/tesseract
-  
-  # KI-Modell (lokal)
-  ollama:
-    image: ollama/ollama
-    volumes:
-      - ollama:/root/.ollama
+### Phase 1: Separieren (1-2 Stunden)
+```
+1. Neuen Ordner "01_DOKUMENTE" erstellen
+2. Nach "Rechnung", "Vertrag", "Versicherung" in Dropbox suchen
+3. Gefundene Dokumente → 01_DOKUMENTE/_INBOX/
+4. Restliche Fotos/Videos → 02_FOTOS_UND_VIDEOS/_UNSORTIERT/
+```
+
+### Phase 2: Dokumente strukturieren (mit KI)
+```
+5. Dropbox MCP-Server einrichten
+6. KI sortiert _INBOX automatisch in Unterordner
+7. OCR für durchsuchbare PDFs
+```
+
+### Phase 3: Fotos später (manuell)
+```
+8. Fotos nach Datum sortieren (wenn Zeit ist)
+9. Automatische Kamera-Uploads → 02_FOTOS_UND_VIDEOS/2026/...
 ```
 
 ---
 
-## Nächste Schritte
+## Vorteile dieser Struktur
 
-- [ ] Scanner aussuchen (Handy vs. dediziert)
-- [ ] Ablage-Struktur finalisieren
-- [ ] Test mit 10-20 Dokumenten
-- [ ] MCP-Server aufsetzen (Docker)
-- [ ] Integration mit OpenClaw
+| Problem | Lösung |
+|---------|--------|
+| Unsortierte Fotos | Getrennt von Dokumenten, keine KI nötig |
+| Dokumente finden | KI durchsucht nur `01_DOKUMENTE/` |
+| Dropbox voll | Nur Dokumente sind "Pflicht", Fotos können ausgelagert werden |
+| Zugriff unterwegs | Dropbox-App für beide Bereiche |
 
 ---
 
-## Zugehörige Dateien
-
-- `memory/99_tracking/lauf_log_2026.md` — Beispiel für Tracking
-- `memory/03_projects/` — Projekte könnten hier verknüpft werden
-- `PEOPLE.md` — Kontakte für Versicherungen/Behörden
+## MCP-Server für Dropbox

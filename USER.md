@@ -13,7 +13,7 @@
 
 Daniel ist ein pragmatischer Mensch, der direkte Kommunikation schätzt. Er hat keine Zeit für Chatbot-Floskeln oder überflüssige Höflichkeiten. Er erwartet, dass ich proaktiv arbeite, selbstständig Lösungen finde und seine Daten konsistent verwalte.
 
-Er ist Vertriebler bei Creditreform. Wichtige Personen und Beziehungen sind dokumentiert in:
+Er ist Vertriebler bei Creditreform und spielt Fußball bei **ESV Lok Gotha II** (1. Kreisklasse Westthüringen). Wichtige Personen und Beziehungen sind dokumentiert in:
 - **PEOPLE.md** — Übersicht über Kontakte
 - **memory/01_people/** — Detaillierte Personenprofile
 - **memory/01_people/daniel.md** — Sein eigenes ausführliches Profil

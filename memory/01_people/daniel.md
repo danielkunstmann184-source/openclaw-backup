@@ -44,6 +44,13 @@
 - **Chef:** Denis (Abschlüsse für Abrechnungen an ihn)
 - **After Work:** Mittwochs 18:30 Uhr Sauna im tabbs (Tabarz)
 
+## Sport
+
+- **Verein:** ESV Lok Gotha II
+- **Liga:** 1. Kreisklasse Westthüringen 2
+- **Position:** Aktiver Spieler
+- **Saison 2025/26:** 6 Siege, 0 Niederlagen (Stand: Februar 2026)
+
 ## API-Keys & Zugänge
 
 - **Moonshot AI:** Eigenes Abo (16,72€/Monat) seit 2026-02-07

@@ -89,29 +89,85 @@ Erinnerung: "Stromrechnung über 142€ fällig in 3 Tagen"
 
 ---
 
-## Hardware-Setup
+## Speicher-Strategie: Cloud-First
 
-### Option A: Minimal (Laptop)
-- Scanner: Handy + Adobe Scan
-- Speicher: Laptop-SSD + Cloud-Backup
-- KI: Lokales Ollama
-- Kosten: ~0€
+**Wichtig:** Dokumente werden NICHT nur lokal gespeichert, sondern primär in der Cloud für:
+- ✅ Zugriff von überall (auch unterwegs)
+- ✅ Backup falls Laptop kaputt/Festplatte defekt
+- ✅ Synchronisation zwischen mehreren Geräten
 
-### Option B: Komfort (NAS)
-- Scanner: Fujitsu ScanSnap ix1600 (~400€)
-- Speicher: Synology NAS (~300-500€)
-- KI: Docker auf NAS oder Laptop
-- Kosten: ~700-900€ einmalig
+### Cloud-Optionen
 
-### Option C: Power-User
-- Scanner: Professionell mit ADF
-- NAS: Leistungsstark (8GB+ RAM)
-- GPU: Für schnelles OCR
-- Kosten: ~1500€+
+| Anbieter | Speicher | Preis/Monat | MCP-Server | Verschlüsselung |
+|----------|----------|-------------|------------|-----------------|
+| **Google Drive** | 15 GB (kostenlos) | €0-10 | ✅ Google Drive MCP | Client-seitig |
+| **Dropbox** | 2 GB (kostenlos) | €0-12 | ✅ Dropbox MCP | Client-seitig |
+| **OneDrive** | 5 GB (kostenlos) | €0-7 | ✅ OneDrive MCP | Client-seitig |
+| **iCloud Drive** | 5 GB (kostenlos) | €0-10 | ⚠️ Eingeschränkt | Client-seitig |
+| **pCloud** | 10 GB (kostenlos) | €0-10 | ❌ Kein MCP | Zero-Knowledge |
+| **Synology NAS + Cloud** | Eigen | €0 | ✅ Filesystem MCP | Selbst kontrolliert |
+
+### Empfohlene Lösung: Google Drive + Lokaler Cache
+
+**Warum Google Drive?**
+- 15 GB kostenlos (für Dokumente ausreichend)
+- Beste MCP-Server-Unterstützung
+- Zuverlässige Sync-Clients
+- Gute Suche (auch ohne KI)
+
+**Architektur:**
+```
+Scanner/Handy
+     ↓
+Google Drive (Cloud-Original)
+     ↓
+Laptop/PC (lokaler Cache)
+     ↓
+MCP-Server (Filesystem MCP)
+     ↓
+OpenClaw-Agent (KI-Zugriff)
+```
+
+### Backup-Strategie (3-2-1 Regel)
+
+| Ebene | Speicherort | Art |
+|-------|-------------|-----|
+| **Original** | Google Drive | Primär (Cloud) |
+| **Kopie 1** | Laptop | Lokaler Cache |
+| **Kopie 2** | USB-Stick / externes HDD | Offline-Backup |
+
+**Automatisierung:**
+- Google Drive Sync = Echtzeit
+- Rclone/Restic = Nightly Backup auf externes HDD
 
 ---
 
-## MCP-Server Stack
+## Hardware-Setup (Cloud-First)
+
+### Option A: Minimal (Cloud-only)
+- **Scanner:** Handy + Adobe Scan (speichert direkt in Google Drive)
+- **Speicher:** Google Drive 15 GB (kostenlos)
+- **KI:** OpenClaw auf AWS (wie jetzt) oder Laptop
+- **Backup:** Google Drive + optional USB-Stick
+- **Kosten:** ~0€
+
+### Option B: Komfort (Cloud + lokale KI)
+- **Scanner:** Fujitsu ScanSnap ix1600 (~400€) → direkt zu Google Drive
+- **Cloud:** Google Drive 100 GB (€2/Monat) oder 2 TB (€10/Monat)
+- **KI:** Laptop (dein 2019er) mit MCP-Servern
+- **Backup:** Google Drive + externes HDD (monatlich)
+- **Kosten:** ~400€ einmalig + €2-10/Monat
+
+### Option C: Power-User (Self-hosted Cloud)
+- **Scanner:** Fujitsu ScanSnap ix1600 (~400€)
+- **Cloud:** Synology NAS mit Cloud-Access (~500€)
+- **Backup:** NAS + externe HDD + optional Backblaze B2
+- **KI:** Docker auf NAS (24/7 verfügbar)
+- **Kosten:** ~900€ einmalig + ~€5/Monat
+
+---
+
+## MCP-Server Stack (Cloud-Version)
 
 ```yaml
 # docker-compose.yml Beispiel

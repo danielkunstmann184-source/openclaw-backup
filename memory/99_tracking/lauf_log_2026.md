@@ -10,6 +10,7 @@
 |---|-------|---------|------|-------|-----|---------|
 | 1 | 2026-02-16 | 10,01 km | 55:04 | 5:30/km | Friedrichroda | Saisonstart mit Michael |
 | 2 | 2026-02-18 | 5,01 km | 24:52 | 4:58/km | Friedrichroda | Kurzer Lauf, wenig Zeit |
+| 3 | 2026-02-21 | 7,70 km | 39:36 | 5:09/km | Friedrichroda | Zweiteiliger Lauf (2,7+5,0 km) |
 
 ---
 
@@ -38,6 +39,18 @@
 - **Tracking:** Strava App
 - **Notizen:** Relativ kurzer Lauf wegen Zeitmangel
 
+### Lauf #3 - 21.02.2026
+- **Distanz:** 7,70 km (aufgesplittet: 2,70 + 5,00 km)
+- **Gesamtzeit:** ~39:36
+- **Ø Tempo:** ~5:09 /km
+- **Teil 1:** 2,70 km in 13:05 (4:50/km)
+- **Teil 2:** 5,00 km in 26:31 (5:18/km)
+- **Schuhe:** HOKA Clifton 10
+- **Ort:** Friedrichroda, Thüringen
+- **Tracking:** Strava App
+- **Titel:** "Lauf 3 Teil 1/2 (leider unterbrochen)"
+- **Notizen:** Zweiteilige Einheit nach Unterbrechung. Gute Kontinuität trotz Pause.
+
 ---
 
-**Gesamtdistanz 2026:** 15,02 km
+**Gesamtdistanz 2026:** 22,72 km

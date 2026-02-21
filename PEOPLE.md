@@ -150,3 +150,10 @@
 - **Letzter Kontakt**: 2026-02-21
 - **Notizen**: Partnerin von Ralf
 
+## Sebastian Schakenzu
+- **Beziehung**: Partner von Mutter Iwona
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: 04.06.1981
+- **Letzter Kontakt**: Unbekannt
+- **Notizen**: Lebensgefährte von Iwona (Mutter)
+

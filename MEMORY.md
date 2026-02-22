@@ -2,7 +2,22 @@
 
 _Mein kuratiertes Langzeitgedächtnis. Destillierte Weisheit aus Tagesdateien._
 
-**Zuletzt aktualisiert:** 2026-02-19
+**Zuletzt aktualisiert:** 2026-02-22
+
+---
+
+## 🆕 Wichtige System-Updates
+
+### Cron-Jobs: Endlich stabil (2026-02-22)
+**Lösung gefunden:** `payload.kind` muss `"systemEvent"` sein, nicht `"agentTurn"`.
+
+**Warum:** `agentTurn` braucht API-Key, `systemEvent` injiziert nur Text.
+
+**Ergebnis:** Alle 19 Cron-Jobs laufen jetzt fehlerfrei.
+
+**Dokumentation:** Siehe `TOOLS.md` → Abschnitt "Cron-Jobs"
+
+**Erinnerungs-Trigger:** "Peter, zeig mir die funktionierende Cron-Config" oder "Cron-Jobs funktionieren nicht"
 
 ---
 

@@ -36,6 +36,43 @@ ffmpeg -i /tmp/output.wav -c:a libopus -b:a 24k /tmp/output.ogg
 
 Siehe **AGENTS.md** → "⏰ Cron-Job Best Practices"
 
+### 🔧 Funktionierende Konfiguration (Memo für mich)
+
+**Wichtig:** `payload.kind` muss `"systemEvent"` sein!
+
+```json
+{
+  "name": "Job-Name",
+  "enabled": true,
+  "sessionTarget": "main",
+  "wakeMode": "next-heartbeat",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 20 * * *",
+    "tz": "Europe/Berlin"
+  },
+  "payload": {
+    "kind": "systemEvent",  // ← DAS IST DER KEY!
+    "text": "Deine Nachricht..."
+  }
+}
+```
+
+**Warum?**
+- `"systemEvent"` = Text wird injiziert, kein API-Key nötig ✅
+- `"agentTurn"` = Startet neuen Agenten, braucht API-Key ❌
+
+**Fehler bei "agentTurn":** `FailoverError: No API key found for provider "anthropic"`
+
+**Lösung:** Immer `systemEvent` verwenden für Erinnerungen/Briefings.
+
+**Einmalige Jobs mit Löschung:**
+```json
+"deleteAfterRun": true
+```
+
+**Referenz:** 2026-02-22 – Alle Cron-Jobs auf `systemEvent` umgestellt, Testläufe erfolgreich.
+
 ---
 
 **Ergänze hier deine eigenen Notizen:** SSH-Hosts, Kameranamen, etc.

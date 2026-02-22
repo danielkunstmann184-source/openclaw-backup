@@ -1,21 +1,33 @@
 # Creditreform Provisionsmodell
 
-**Gültig ab:** 01.06.2024  
+**Gültig ab:** 01.06.2024 (Preise 2026 aktualisiert)  
 **Standort:** Creditreform Siegen und Creditreform Erfurt  
 **Dokument:** Siehe `provisionsmodell-2024.jpg`
 
 ---
 
+## ⚠️ Preis-Anpassung 2026
+
+Die Beiträge wurden für 2026 angehoben – die Provisionssätze bleiben gleich:
+
+| Produkt | Alter Preis (2024) | Neuer Preis (2026) | Provision (50%) |
+|---------|-------------------|-------------------|-----------------|
+| **Standard** | €840 | **€900** | **€450** |
+| **Classic** | €960 | **€1.080** | **€540** |
+| **Exclusive** | €1.200 | **€1.440** | **€720** |
+
+---
+
 ## 💰 Provisionssätze Übersicht
 
-### Neumitgliedschaften (2-Jahresvertrag)
+### Neumitgliedschaften (2-Jahresvertrag) – Preise 2026
 
-| Produkt | Beitrag | Provision |
-|---------|---------|-----------|
-| **Standard** | €840 | 50% = **€420** |
-| **Classic** | €960 | 50% = **€480** |
-| **Exclusive** | €1.200 | 50% = **€600** |
-| **Sonderklassen** (Unter €840) | variabel | 50% |
+| Produkt | Beitrag | Provision (50%) |
+|---------|---------|-----------------|
+| **Standard** | €900 | **€450** |
+| **Classic** | €1.080 | **€540** |
+| **Exclusive** | €1.440 | **€720** |
+| **Sonderklassen** (Unter €900) | variabel | 50% |
 | **Sonderklassen** (Inkasso) | variabel | 30% |
 
 **Deine Bonität (Meine Bonität):** €300 → 30% Provision
@@ -45,7 +57,7 @@
 
 ### Beitragserhöhung / Upgrade
 
-- Standard, Classic, Exclusive: **50%**
+- Standard (€900), Classic (€1.080), Exclusive (€1.440): **50%**
 - Meine Bonität: **30%**
 - Beitragsklasse größer €500: **30%**
 
@@ -84,12 +96,12 @@
 
 ---
 
-## 📊 Wichtige Erkenntnisse
+## 📊 Wichtige Erkenntnisse (Preise 2026)
 
 ### Deine aktuellen Chancen:
 
-1. **Frau Pfotenhauer (Blankenhain)** - Classic €960
-   - Provision: **€480**
+1. **Frau Pfotenhauer (Blankenhain)** - Classic €1.080
+   - Provision: **€540**
    - Status: Entscheidung fällig Montag
 
 2. **Herr Dietrich (Humanitas)** - Option 1: €900 / Option 2: €1.080
@@ -97,19 +109,20 @@
    - Status: E-Mail Montag morgen
 
 3. **Georg Schulze** - unbekannt
-   - Mögliche Provision: €420-€600
+   - Mögliche Provision: €450-€720
    - Status: Nachfassen Montag
 
 ---
 
-## 🎯 Ziele 2026
+## 🎯 Ziele 2026 (mit neuen Preisen)
 
 - **60 Mitglieder** + **12 CrefoZerts**
-- Bei durchschnittlich €900/Mitglied = €27.000 Provision
+- Bei durchschnittlich €1.000/Mitglied = €30.000 Provision
 - Plus CrefoZerts (ca. €300 x 12 = €3.600)
-- **Gesamt ca. €30.600 Provision** bei Erreichung des Ziels
+- **Gesamt ca. €33.600 Provision** bei Erreichung des Ziels
 
 ---
 
 *Dokument gespeichert: 2026-02-22*  
-*Quelle: Foto vom Provisionsmodell (gültig ab 01.06.2024)*
+*Quelle: Foto vom Provisionsmodell (gültig ab 01.06.2024)*  
+*Update: Preise für 2026 angepasst (Standard €900, Classic €1.080, Exclusive €1.440)*

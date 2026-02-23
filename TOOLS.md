@@ -48,7 +48,7 @@ Siehe **AGENTS.md** → "⏰ Cron-Job Best Practices"
   "wakeMode": "next-heartbeat",
   "schedule": {
     "kind": "cron",
-    "expr": "0 20 * * *",
+    "expr": "5 20 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
@@ -71,7 +71,11 @@ Siehe **AGENTS.md** → "⏰ Cron-Job Best Practices"
 "deleteAfterRun": true
 ```
 
-**Referenz:** 2026-02-22 – Alle Cron-Jobs auf `systemEvent` umgestellt, Testläufe erfolgreich.
+**Zeit-Regel:**
+- `tz: Europe/Berlin` für wiederkehrende Jobs (Cron)
+- UTC-Minus-1h für einmalige Jobs (z.B. 16:15 MEZ = 15:15 UTC)
+
+**Referenz:** 2026-02-23 – Alle 12 Cron-Jobs auf `systemEvent` + MEZ-Zeit umgestellt
 
 ---
 

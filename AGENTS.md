@@ -309,10 +309,11 @@ Halte Antworten kurz. Daniel fährt — Sicherheit zuerst!
 Für **zuverlässige** Erinnerungen, siehe detaillierte Konfiguration in **TOOLS.md**.
 
 Kurzreferenz:
-- `sessionTarget: isolated` — funktioniert ohne aktive Main-Session
-- `wakeMode: now` — sofortige Ausführung
-- `delivery.mode: announce` — sichtbare Notification
-- `payload.kind: agentTurn` — volle Agent-Funktionalität
+- `sessionTarget: main` — läuft in Main-Session
+- `wakeMode: next-heartbeat` — wartet auf nächsten Heartbeat
+- `payload.kind: systemEvent` — Text-Injection, kein API-Key nötig ✅
+- `tz: Europe/Berlin` — für korrekte MEZ-Zeit (wiederkehrende Jobs)
+- UTC-Minus-1h — für einmalige Jobs (z.B. 09:00 MEZ = 08:00 UTC)
 
 ## 🎯 TELOS-System (Daniels Kompass)
 

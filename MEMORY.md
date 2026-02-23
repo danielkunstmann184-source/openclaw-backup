@@ -2,7 +2,7 @@
 
 _Mein kuratiertes Langzeitgedächtnis. Destillierte Weisheit aus Tagesdateien._
 
-**Zuletzt aktualisiert:** 2026-02-22
+**Zuletzt aktualisiert:** 2026-02-23
 
 ---
 
@@ -13,7 +13,7 @@ _Mein kuratiertes Langzeitgedächtnis. Destillierte Weisheit aus Tagesdateien._
 
 **Warum:** `agentTurn` braucht API-Key, `systemEvent` injiziert nur Text.
 
-**Ergebnis:** Alle 19 Cron-Jobs laufen jetzt fehlerfrei.
+**Ergebnis:** Alle 12 Cron-Jobs laufen jetzt fehlerfrei (nach Bereinigung und Zeitzone-Korrektur).
 
 **Dokumentation:** Siehe `TOOLS.md` → Abschnitt "Cron-Jobs"
 
@@ -135,6 +135,7 @@ Siehe: `memory/03_projects/aktiv.md`
 | **2026-02-12** | Werkstatttermin erfolgreich absolviert |
 | **2026-02-18** | TELOS-System komplett erstellt (10 Dateien in `memory/00_telos/`) 🎯 |
 | **2026-02-19** | Komplette System-Optimierung: Deutsche Dokumentation, Scripts bereinigt, API-Keys aktualisiert |
+| **2026-02-23** | Cron-Jobs Zeitzone korrigiert (UTC/MEZ), AGENTS.md & TOOLS.md synchronisiert, HEARTBEAT.md verbessert |
 
 ---
 

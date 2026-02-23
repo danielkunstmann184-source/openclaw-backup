@@ -6,16 +6,26 @@ Skills definieren _wie_ Tools funktionieren. Diese Datei ist für _deine_ Detail
 
 ## TTS (Text-to-Speech)
 
-### Standard (Auto-Modus)
-- **System:** Piper TTS (natürlichere Stimme)
+### Standard (Sprachnachrichten)
+- **System:** ElevenLabs API (natürlichste Stimme)
+- **Voice ID:** `xH6rAlU6xUCcDlplBaJQ`
+- **API-Key:** In `.env.api` hinterlegt
+- **Workflow:** ElevenLabs zuerst → Fallback bei Limit
+
+### Fallback 1 (Lokal)
+- **System:** Piper TTS (offline, kostenlos)
 - **Deutsches Modell:** Thorsten Medium (de_DE)
 - **Pfad:** `~/.openclaw/tools/tts-piper/`
 - **Wrapper:** `~/.openclaw/tools/tts-piper/tts.sh`
-- **Format:** WAV (wird zu OGG/Opus konvertiert)
 
-### Fallback
-- **System:** Sherpa ONNX (Backup)
+### Fallback 2 (Notfall)
+- **System:** Sherpa ONNX
 - **Pfad:** `~/.openclaw/tools/sherpa-onnx-tts/`
+
+### Reihenfolge bei Sprachausgabe
+1. **ElevenLabs** (API) — Primär, beste Qualität
+2. **Piper TTS** (lokal) — bei ElevenLabs-Limit
+3. **Sherpa ONNX** (lokal) — Notfall-Option
 
 ### Nutzung im Auto-Modus
 ```bash

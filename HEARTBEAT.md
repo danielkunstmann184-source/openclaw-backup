@@ -23,26 +23,31 @@ Kurze Checks für regelmäßige Heartbeats. Token-sparend halten!
 // Speichere in memory/heartbeat-state.json:
 {
   "lastChecks": {
-    "backup": 1703275200,
-    "git": 1703260800,
-    "cron": null,
-    "api": null,
-    "memory": null
-  }
+    "backup": 1772016000,
+    "git": 1772016000,
+    "cron": 1772016000,
+    "api": 1771929600,
+    "memory": 1771929600
+  },
+  "lastUpdated": "2026-02-23T10:00:00Z"
 }
 ```
+
+**Zeit-Formate:**
+- Unix-Timestamp (Sekunden seit 1970)
+- ISO 8601 für `lastUpdated`
 
 ## Wann zu melden
 
 **Sprech wenn:**
 - Backup fehlgeschlagen
-- Cron-Job mit Fehler
+- Cron-Job mit Fehler (⚠️ Zeit-Problem beachten: UTC vs MEZ = 1h Unterschied!)
 - API-Key ungültig
 - Wichtige Deadline <2h
 - >8h seit letzter Nachricht
+- **Dringlichkeit:** Egal welche Uhrzeit — wenn es wichtig ist, melde dich!
 
 **Schweige (HEARTBEAT_OK) wenn:**
-- 23:00-08:00 Uhr (außer Dringlichkeit)
 - Mensch offensichtlich beschäftigt
 - Erst vor <30min gecheckt
 - Nichts Neues

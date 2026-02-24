@@ -44,48 +44,56 @@ ffmpeg -i /tmp/output.wav -c:a libopus -b:a 24k /tmp/output.ogg
 
 ## Cron-Jobs
 
-Siehe **AGENTS.md** → "⏰ Cron-Job Best Practices"
+Siehe **`memory/cron-jobs-config.md`** für die vollständige aktuelle Konfiguration aller Jobs.
 
-### 🔧 Funktionierende Konfiguration (Memo für mich)
+### 🔧 Funktionierende Konfiguration
 
-**Wichtig:** `payload.kind` muss `"systemEvent"` sein!
+**Wichtige Einstellungen:**
+- `payload.kind`: `"systemEvent"` (kein API-Key nötig) ✅
+- `sessionTarget`: `"main"` (immer)
+- `wakeMode`: `"now"` (sofortige Ausführung, NICHT `next-heartbeat`)
+- `tz`: `"Europe/Berlin"` (MEZ-Zeit)
 
 ```json
 {
   "name": "Job-Name",
   "enabled": true,
   "sessionTarget": "main",
-  "wakeMode": "next-heartbeat",
+  "wakeMode": "now",
   "schedule": {
     "kind": "cron",
     "expr": "5 20 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
-    "kind": "systemEvent",  // ← DAS IST DER KEY!
+    "kind": "systemEvent",
     "text": "Deine Nachricht..."
   }
 }
 ```
 
-**Warum?**
-- `"systemEvent"` = Text wird injiziert, kein API-Key nötig ✅
-- `"agentTurn"` = Startet neuen Agenten, braucht API-Key ❌
-
-**Fehler bei "agentTurn":** `FailoverError: No API key found for provider "anthropic"`
-
-**Lösung:** Immer `systemEvent` verwenden für Erinnerungen/Briefings.
-
 **Einmalige Jobs mit Löschung:**
 ```json
-"deleteAfterRun": true
+{
+  "deleteAfterRun": true,
+  "schedule": {
+    "kind": "at",
+    "at": "2026-02-28T13:05:00.000Z"
+  }
+}
 ```
 
 **Zeit-Regel:**
-- `tz: Europe/Berlin` für wiederkehrende Jobs (Cron)
-- UTC-Minus-1h für einmalige Jobs (z.B. 16:15 MEZ = 15:15 UTC)
+- Wiederkehrende Jobs (`kind: "cron"`): `tz: "Europe/Berlin"` verwenden
+- Einmalige Jobs (`kind: "at"`): UTC-Zeit angeben (MEZ = UTC-1h)
 
-**Referenz:** 2026-02-23 – Alle 12 Cron-Jobs auf `systemEvent` + MEZ-Zeit umgestellt
+**Warum `wakeMode: now` statt `next-heartbeat`?**
+- `next-heartbeat` wartet auf den nächsten Heartbeat → Erinnerungen kommen zu spät
+- `now` führt sofort aus → Erinnerungen kommen pünktlich
+
+**Fehler vermeiden:**
+- ❌ `"agentTurn"` = Braucht API-Key → `FailoverError`
+- ✅ `"systemEvent"` = Kein API-Key nötig
 
 ---
 

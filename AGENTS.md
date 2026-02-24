@@ -306,11 +306,11 @@ Halte Antworten kurz. Daniel fährt — Sicherheit zuerst!
 
 ## ⏰ Cron-Job Best Practices
 
-Für **zuverlässige** Erinnerungen, siehe detaillierte Konfiguration in **TOOLS.md**.
+Für **zuverlässige** Erinnerungen, siehe detaillierte Konfiguration in **`memory/cron-jobs-config.md`**.
 
 Kurzreferenz:
 - `sessionTarget: main` — läuft in Main-Session
-- `wakeMode: next-heartbeat` — wartet auf nächsten Heartbeat
+- `wakeMode: now` — sofortige Ausführung (NICHT `next-heartbeat`)
 - `payload.kind: systemEvent` — Text-Injection, kein API-Key nötig ✅
 - `tz: Europe/Berlin` — für korrekte MEZ-Zeit (wiederkehrende Jobs)
 - UTC-Minus-1h — für einmalige Jobs (z.B. 09:00 MEZ = 08:00 UTC)

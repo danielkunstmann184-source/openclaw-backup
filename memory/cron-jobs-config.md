@@ -51,7 +51,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
   "wakeMode": "now",
   "schedule": {
     "kind": "cron",
-    "expr": "5 7 * * *",
+    "expr": "0 7 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
@@ -70,7 +70,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
   "wakeMode": "now",
   "schedule": {
     "kind": "cron",
-    "expr": "5 20 * * *",
+    "expr": "0 20 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
@@ -89,7 +89,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
   "wakeMode": "now",
   "schedule": {
     "kind": "cron",
-    "expr": "5 21 * * *",
+    "expr": "0 21 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
@@ -124,26 +124,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 3. Erstellt Notion-Eintrag mit Inhalt
 4. Kurze Telegram-Bestätigung senden
 
-### 5. Daily Summary
-```json
-{
-  "name": "Daily Summary - MAIN",
-  "enabled": true,
-  "sessionTarget": "main",
-  "wakeMode": "now",
-  "schedule": {
-    "kind": "cron",
-    "expr": "35 23 * * *",
-    "tz": "Europe/Berlin"
-  },
-  "payload": {
-    "kind": "systemEvent",
-    "text": "📊 Daily Summary erstellt!\n\nTageszusammenfassung wurde in memory/YYYY-MM-DD.md gespeichert.\nAlle wichtigen Ereignisse, Termine und Entscheidungen persistiert."
-  }
-}
-```
-
-### 6. Täglicher Tagebucheintrag
+### 5. Täglicher Tagebucheintrag
 ```json
 {
   "name": "Täglicher Tagebucheintrag",
@@ -162,7 +143,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 7. Auto People Update
+### 6. Auto People Update
 ```json
 {
   "name": "Auto People Update - MAIN",
@@ -181,7 +162,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 8. Weekly Social-Check
+### 7. Weekly Social-Check
 ```json
 {
   "name": "Weekly Social-Check",
@@ -200,7 +181,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 9. Pattern-Scanner
+### 8. Pattern-Scanner
 ```json
 {
   "name": "Pattern-Scanner",
@@ -219,7 +200,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 10. Deadline Weimar Unterlagen
+### 9. Deadline Weimar Unterlagen
 ```json
 {
   "name": "Deadline Weimar Unterlagen - MAIN",
@@ -238,7 +219,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 11. Patrizia Setup
+### 10. Patrizia Setup
 ```json
 {
   "name": "Patrizia Setup - MAIN",
@@ -263,10 +244,11 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 
 | UTC (Server) | MEZ (Deutschland) | Hinweis |
 |--------------|-------------------|---------|
-| 06:00 | 07:00 | Morgen-Briefing (07:05) |
-| 19:00 | 20:00 | Evening-Briefing (20:05) |
-| 20:00 | 21:00 | Täglicher Check-in (21:05) |
-| 22:00 | 23:00 | Notion/Daily/Tagebucheintrag |
+| 06:00 | 07:00 | Morgen-Briefing (07:00) |
+| 19:00 | 20:00 | Evening-Briefing (20:00) |
+| 20:00 | 21:00 | Täglicher Check-in (21:00) |
+| 22:00 | 23:00 | Notion Tagebuch (23:00) |
+| 22:45 | 23:45 | Täglicher Tagebucheintrag (23:45) |
 
 **Regel:** Einmalige Jobs (`kind: "at"`) müssen in UTC angegeben werden. Wiederkehrende Jobs (`kind: "cron"`) nutzen `tz: "Europe/Berlin"`.
 

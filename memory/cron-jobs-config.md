@@ -56,7 +56,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
   },
   "payload": {
     "kind": "systemEvent",
-    "text": "🌅 Guten Morgen! Das ist dein tägliches Briefing:\n\nLies memory/YYYY-MM-DD.md für heute und MEMORY.md für Kontext.\n\nDann gib ein kurzes Briefing:\n🧠 Sentiment-Check\n📅 Wichtige Termine\n👥 Social-Checks\n💪 Health-Check\n🌤️ Wetter + Kleidung"
+    "text": "🌅 Guten Morgen! Das ist dein Tages-Setup:\n\n📋 WAS STEHT HEUTE AN?\n• Termine aus memory/YYYY-MM-DD.md\n• Wichtige To-Dos\n• Deadlines & Follow-ups\n\n🎯 FOKUS\n• Top-Priorität heute?\n• Creditreform: Neue Mitglieder, Follow-ups\n• Persönlich: Sport, Familie, Erledigungen\n\n🧠 MINDSET CHECK\n• Wie fühlst du dich? (Skala 1-10)\n• Gut ausgeschlafen?\n\n🌤️ WETTER + KLEIDUNG\n\nLass uns den Tag rocken! 💪"
   }
 }
 ```

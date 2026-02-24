@@ -279,3 +279,32 @@ FailoverError: No API key found for provider "anthropic"
 ```
 **Ursache:** `agentTurn` statt `systemEvent` verwendet.  
 **Lösung:** Immer `systemEvent` für Erinnerungen nutzen.
+
+---
+
+## 🛡️ Sicherheitsmaßnahmen
+
+### Automatische Überwachung
+**Job:** `Cron-Job Config-Guard`  
+**Zeit:** Täglich 06:00 MEZ  
+**Funktion:** Prüft alle Jobs auf korrekte Einstellungen, warnt bei Abweichungen
+
+### Manuelle Prüfung vor Änderungen
+**Vor jedem neuen Job oder Update:**
+1. In `memory/cron-jobs-config.md` das Template kopieren
+2. Einstellungen gegen Checkliste prüfen:
+   - [ ] `sessionTarget`: `main`
+   - [ ] `wakeMode`: `now`
+   - [ ] `payload.kind`: `systemEvent`
+   - [ ] `tz`: `Europe/Berlin` (bei wiederkehrenden Jobs)
+
+### Keine Experimente
+- Nie `agentTurn` verwenden (braucht API-Key, führt zu Fehlern)
+- Nie `isolated` als `sessionTarget` verwenden
+- Nie `next-heartbeat` als `wakeMode` verwenden (verspätete Ausführung)
+
+### Backup
+Diese Datei (`memory/cron-jobs-config.md`) ist die **Source of Truth**.  
+Bei Verlust der Jobs kann ich sie hieraus wiederherstellen.
+
+**Letztes Update:** 2026-02-24

@@ -4,8 +4,12 @@
 
 WORKSPACE="/home/ubuntu/.openclaw/workspace"
 
-# Token aus .env.notion laden
-if [ -f "$WORKSPACE/.env.notion" ]; then
+# Token aus ~/.config/openclaw/.env.notion laden
+CONFIG_DIR="$HOME/.config/openclaw"
+if [ -f "$CONFIG_DIR/.env.notion" ]; then
+    NOTION_TOKEN=$(grep "^NOTION_API_KEY=" "$CONFIG_DIR/.env.notion" | cut -d'=' -f2 | tr -d '[:space:]')
+elif [ -f "$WORKSPACE/.env.notion" ]; then
+    # Fallback auf alten Pfad (für Abwärtskompatibilität)
     NOTION_TOKEN=$(grep "^NOTION_API_KEY=" "$WORKSPACE/.env.notion" | cut -d'=' -f2 | tr -d '[:space:]')
 else
     echo "❌ .env.notion nicht gefunden"

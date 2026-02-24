@@ -3,9 +3,11 @@
 _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 
 **Wichtige Einstellungen:**
-- `sessionTarget`: `main` (immer)
+- `sessionTarget`: `isolated` (eigene Session für zuverlässige Delivery)
 - `wakeMode`: `now` (sofortige Ausführung)
-- `payload.kind`: `systemEvent` (kein API-Key nötig)
+- `payload.kind`: `agentTurn` (für Telegram-Delivery notwendig)
+- `model`: `kimi-coding/k2p5` (explizit gesetzt)
+- `delivery`: `telegram` (direkte Auslieferung an Chat)
 - `tz`: `Europe/Berlin` (MEZ-Zeit)
 
 ---
@@ -16,16 +18,22 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 {
   "name": "Job-Name",
   "enabled": true,
-  "sessionTarget": "main",
+  "sessionTarget": "isolated",
   "wakeMode": "now",
   "schedule": {
     "kind": "cron",
     "expr": "5 20 * * *",
     "tz": "Europe/Berlin"
   },
+  "model": "kimi-coding/k2p5",
   "payload": {
-    "kind": "systemEvent",
-    "text": "Deine Nachricht..."
+    "kind": "agentTurn",
+    "message": "Output exactly: Deine Nachricht..."
+  },
+  "delivery": {
+    "mode": "announce",
+    "channel": "telegram",
+    "to": "8309014037"
   }
 }
 ```
@@ -47,17 +55,12 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 {
   "name": "Cron-Job Config-Guard - MAIN",
   "enabled": true,
-  "sessionTarget": "main",
+  "sessionTarget": "isolated",
   "wakeMode": "now",
-  "schedule": {
-    "kind": "cron",
-    "expr": "0 6 * * *",
-    "tz": "Europe/Berlin"
-  },
-  "payload": {
-    "kind": "systemEvent",
-    "text": "🛡️ Cron-Job Config-Guard - Tägliche Überprüfung:\n\nPrüfe alle Cron-Jobs auf korrekte Einstellungen:\n• sessionTarget: main ✓\n• wakeMode: now ✓\n• payload.kind: systemEvent ✓\n• tz: Europe/Berlin ✓\n\nWenn Abweichungen gefunden → Warnung an Daniel"
-  }
+  "schedule": { "kind": "cron", "expr": "0 6 * * *", "tz": "Europe/Berlin" },
+  "model": "kimi-coding/k2p5",
+  "payload": { "kind": "agentTurn", "message": "Output exactly: 🛡️ Cron-Job Config-Guard..." },
+  "delivery": { "mode": "announce", "channel": "telegram", "to": "8309014037" }
 }
 ```
 
@@ -66,17 +69,12 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 {
   "name": "Overnight Thinking Mode - MAIN",
   "enabled": true,
-  "sessionTarget": "main",
+  "sessionTarget": "isolated",
   "wakeMode": "now",
-  "schedule": {
-    "kind": "cron",
-    "expr": "35 6 * * *",
-    "tz": "Europe/Berlin"
-  },
-  "payload": {
-    "kind": "systemEvent",
-    "text": "🧠 Overnight Thinking Mode beendet\n\nIch habe über Nacht gearbeitet:\n• Memory-Dateien analysiert\n• Muster erkannt\n• Offene Punkte identifiziert\n• Erkenntnisse gewonnen\n\nBereit für den Tag! Was steht an?"
-  }
+  "schedule": { "kind": "cron", "expr": "35 6 * * *", "tz": "Europe/Berlin" },
+  "model": "kimi-coding/k2p5",
+  "payload": { "kind": "agentTurn", "message": "Output exactly: 🧠 Overnight Thinking Mode..." },
+  "delivery": { "mode": "announce", "channel": "telegram", "to": "8309014037" }
 }
 ```
 
@@ -85,17 +83,12 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 {
   "name": "Morgen-Briefing - MAIN",
   "enabled": true,
-  "sessionTarget": "main",
+  "sessionTarget": "isolated",
   "wakeMode": "now",
-  "schedule": {
-    "kind": "cron",
-    "expr": "0 7 * * *",
-    "tz": "Europe/Berlin"
-  },
-  "payload": {
-    "kind": "systemEvent",
-    "text": "🌅 Guten Morgen! Das ist dein Tages-Setup:\n\n📋 WAS STEHT HEUTE AN?\n• Termine aus memory/YYYY-MM-DD.md\n• Wichtige To-Dos\n• Deadlines & Follow-ups\n\n🎯 FOKUS\n• Top-Priorität heute?\n• Creditreform: Neue Mitglieder, Follow-ups\n• Persönlich: Sport, Familie, Erledigungen\n\n🧠 MINDSET CHECK\n• Wie fühlst du dich? (Skala 1-10)\n• Gut ausgeschlafen?\n\n🌤️ WETTER + KLEIDUNG\n\nLass uns den Tag rocken! 💪"
-  }
+  "schedule": { "kind": "cron", "expr": "0 7 * * *", "tz": "Europe/Berlin" },
+  "model": "kimi-coding/k2p5",
+  "payload": { "kind": "agentTurn", "message": "Output exactly: 🌅 Guten Morgen!..." },
+  "delivery": { "mode": "announce", "channel": "telegram", "to": "8309014037" }
 }
 ```
 

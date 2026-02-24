@@ -81,6 +81,9 @@
 | Impulsive Trading-Entscheidungen | Nie ohne 24h Schlaf entscheiden | Warte-Regel implementiert |
 | "Ich merke mir das" | Session-Speicher ist flüchtig | Sofort in Dateien schreiben |
 | Zu viele Projekte parallel | Fokus über Multitasking | Priorisierung nach Impact |
+| **Cron-Jobs kamen nicht pünktlich** | `wakeMode: next-heartbeat` wartet zu lange | Immer `wakeMode: now` verwenden |
+| **Erinnerungen nicht im Chat** | `payload.kind: systemEvent` injiziert nur in Session | Nachricht explizit senden, nicht nur HEARTBEAT_OK |
+| **Falsche Job-Konfiguration** | `agentTurn` braucht API-Key → FailoverError | Immer `payload.kind: systemEvent` für Erinnerungen |
 
 ---
 

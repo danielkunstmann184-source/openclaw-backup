@@ -124,26 +124,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 3. Erstellt Notion-Eintrag mit Inhalt
 4. Kurze Telegram-Bestätigung senden
 
-### 5. Täglicher Tagebucheintrag
-```json
-{
-  "name": "Täglicher Tagebucheintrag",
-  "enabled": true,
-  "sessionTarget": "main",
-  "wakeMode": "now",
-  "schedule": {
-    "kind": "cron",
-    "expr": "45 23 * * *",
-    "tz": "Europe/Berlin"
-  },
-  "payload": {
-    "kind": "systemEvent",
-    "text": "📝 Neuer Tagebucheintrag erstellt!\n\nIch habe soeben einen neuen Eintrag in dein Notion-Tagebuch geschrieben:\n• Titel: YYYYMMDD_Tagesreflexion\n• Struktur: Morgens → Arbeit → Abend → Dankbarkeit → Ausblick\n\nDer Eintrag wartet auf deine Details. Öffne Notion und ergänze, was heute wichtig war.\n\nSchlaf gut, Daniel. 🌙"
-  }
-}
-```
-
-### 6. Auto People Update
+### 5. Auto People Update
 ```json
 {
   "name": "Auto People Update - MAIN",
@@ -162,7 +143,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 7. Weekly Social-Check
+### 6. Weekly Social-Check
 ```json
 {
   "name": "Weekly Social-Check",
@@ -181,7 +162,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 8. Pattern-Scanner
+### 7. Pattern-Scanner
 ```json
 {
   "name": "Pattern-Scanner",
@@ -200,7 +181,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 9. Deadline Weimar Unterlagen
+### 8. Deadline Weimar Unterlagen
 ```json
 {
   "name": "Deadline Weimar Unterlagen - MAIN",
@@ -219,7 +200,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 }
 ```
 
-### 10. Patrizia Setup
+### 9. Patrizia Setup
 ```json
 {
   "name": "Patrizia Setup - MAIN",
@@ -247,8 +228,7 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 | 06:00 | 07:00 | Morgen-Briefing (07:00) |
 | 19:00 | 20:00 | Evening-Briefing (20:00) |
 | 20:00 | 21:00 | Täglicher Check-in (21:00) |
-| 22:00 | 23:00 | Notion Tagebuch (23:00) |
-| 22:45 | 23:45 | Täglicher Tagebucheintrag (23:45) |
+| 22:00 | 23:00 | Notion Tagebuch (automatisch) |
 
 **Regel:** Einmalige Jobs (`kind: "at"`) müssen in UTC angegeben werden. Wiederkehrende Jobs (`kind: "cron"`) nutzen `tz: "Europe/Berlin"`.
 

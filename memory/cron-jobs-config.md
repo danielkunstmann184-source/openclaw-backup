@@ -108,15 +108,21 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
   "wakeMode": "now",
   "schedule": {
     "kind": "cron",
-    "expr": "5 23 * * *",
+    "expr": "0 23 * * *",
     "tz": "Europe/Berlin"
   },
   "payload": {
     "kind": "systemEvent",
-    "text": "📝 Neuer Tagebucheintrag in Notion erstellt!\n\nTitel: YYYYMMDD_Tagesreflexion\nStruktur: Morgens → Arbeit → Abend → Dankbarkeit → Ausblick\n\nÖffne Notion und ergänze Details."
+    "text": "📝 NOTION_DIARY_TRIGGER\n\nErstelle Tagebucheintrag automatisch:\n- Script: /home/ubuntu/.openclaw/workspace/scripts/diary_entry.sh\n- Datenbank: Tagebuch\n- Aktion: Eintrag mit lokalem Content aus memory/YYYY-MM-DD.md erstellen\n\nNach Ausführung: Kurze Bestätigung an Daniel senden."
   }
 }
 ```
+
+**Aktion beim Trigger:**
+1. Script `diary_entry.sh` ausführen
+2. Script liest `memory/YYYY-MM-DD.md`
+3. Erstellt Notion-Eintrag mit Inhalt
+4. Kurze Telegram-Bestätigung senden
 
 ### 5. Daily Summary
 ```json

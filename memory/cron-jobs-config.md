@@ -42,6 +42,44 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 
 ## Aktive Jobs
 
+### 0. Cron-Job Config-Guard
+```json
+{
+  "name": "Cron-Job Config-Guard - MAIN",
+  "enabled": true,
+  "sessionTarget": "main",
+  "wakeMode": "now",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 6 * * *",
+    "tz": "Europe/Berlin"
+  },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "🛡️ Cron-Job Config-Guard - Tägliche Überprüfung:\n\nPrüfe alle Cron-Jobs auf korrekte Einstellungen:\n• sessionTarget: main ✓\n• wakeMode: now ✓\n• payload.kind: systemEvent ✓\n• tz: Europe/Berlin ✓\n\nWenn Abweichungen gefunden → Warnung an Daniel"
+  }
+}
+```
+
+### 0.5. Overnight Thinking Mode
+```json
+{
+  "name": "Overnight Thinking Mode - MAIN",
+  "enabled": true,
+  "sessionTarget": "main",
+  "wakeMode": "now",
+  "schedule": {
+    "kind": "cron",
+    "expr": "35 6 * * *",
+    "tz": "Europe/Berlin"
+  },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "🧠 Overnight Thinking Mode beendet\n\nIch habe über Nacht gearbeitet:\n• Memory-Dateien analysiert\n• Muster erkannt\n• Offene Punkte identifiziert\n• Erkenntnisse gewonnen\n\nBereit für den Tag! Was steht an?"
+  }
+}
+```
+
 ### 1. Morgen-Briefing
 ```json
 {
@@ -223,12 +261,17 @@ _Export aller aktiven Cron-Jobs — Stand: 2026-02-24_
 
 ## Zeit-Referenz
 
-| UTC (Server) | MEZ (Deutschland) | Hinweis |
-|--------------|-------------------|---------|
-| 06:00 | 07:00 | Morgen-Briefing (07:00) |
-| 19:00 | 20:00 | Evening-Briefing (20:00) |
-| 20:00 | 21:00 | Täglicher Check-in (21:00) |
+| UTC (Server) | MEZ (Deutschland) | Job |
+|--------------|-------------------|-----|
+| 05:00 | 06:00 | Cron-Job Config-Guard |
+| 05:35 | 06:35 | Overnight Thinking Mode |
+| 06:00 | 07:00 | Morgen-Briefing |
+| 19:00 | 20:00 | Evening-Briefing |
+| 20:00 | 21:00 | Täglicher Check-in |
 | 22:00 | 23:00 | Notion Tagebuch (automatisch) |
+| 05:15 | 06:15 | Auto People Update (Samstag) |
+| 09:05 | 10:05 | Weekly Social-Check (Sonntag) |
+| 19:05 | 20:05 | Pattern-Scanner (Sonntag) |
 
 **Regel:** Einmalige Jobs (`kind: "at"`) müssen in UTC angegeben werden. Wiederkehrende Jobs (`kind: "cron"`) nutzen `tz: "Europe/Berlin"`.
 
@@ -276,3 +319,21 @@ Diese Datei (`memory/cron-jobs-config.md`) ist die **Source of Truth**.
 Bei Verlust der Jobs kann ich sie hieraus wiederherstellen.
 
 **Letztes Update:** 2026-02-24
+
+---
+
+## ✅ Alle Jobs Eingerichtet
+
+| # | Name | Zeit | Status |
+|---|------|------|--------|
+| 0 | Cron-Job Config-Guard | 06:00 täglich | ✅ Aktiv |
+| 0.5 | Overnight Thinking Mode | 06:35 täglich | ✅ Aktiv |
+| 1 | Morgen-Briefing | 07:00 täglich | ✅ Aktiv |
+| 2 | Evening-Briefing | 20:00 täglich | ✅ Aktiv |
+| 3 | Täglicher Check-in | 21:00 täglich | ✅ Aktiv |
+| 4 | Notion Tagebuch | 23:00 täglich | ✅ Aktiv |
+| 5 | Auto People Update | Sa 06:15 | ✅ Aktiv |
+| 6 | Weekly Social-Check | So 10:05 | ✅ Aktiv |
+| 7 | Pattern-Scanner | So 20:05 | ✅ Aktiv |
+| 8 | Deadline Weimar | Fr 28.02. 14:05 | ✅ Einmalig |
+| 9 | Patrizia Setup | Fr 28.02. 08:05 | ✅ Einmalig |

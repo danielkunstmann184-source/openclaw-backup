@@ -2,7 +2,7 @@
 # Daily Diary Entry Script for Notion - MIT AUTOMATISCHER CONTENT-ÜBERTRAGUNG
 # Liest memory/YYYY-MM-DD.md und überträgt Inhalt nach Notion
 
-WORKSPACE="/home/ubuntu/.openclaw/workspace"
+WORKSPACE="/root/workspace"
 
 # Token aus ~/.config/openclaw/.env.notion laden
 CONFIG_DIR="$HOME/.config/openclaw"
@@ -124,11 +124,42 @@ if echo "$EXISTING" | grep -q '"results":\[\]'; then
 else
     echo "ℹ️ Eintrag für $DATE_YMD existiert bereits"
     
-    # Optional: Update mit lokalen Daten wenn vorhanden
+    # Update mit lokalen Daten wenn vorhanden
     if [ "$HAS_LOCAL_CONTENT" = true ]; then
-        echo "📝 Lokale Datei vorhanden - prüfe auf Updates..."
-        # Hier könnte man den bestehenden Eintrag updaten
-        # Für jetzt: nur Info
+        echo "📝 Lokale Datei vorhanden - aktualisiere Eintrag..."
+        
+        # Extrahiere Page ID
+        PAGE_ID=$(echo "$EXISTING" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+        
+        if [ -n "$PAGE_ID" ]; then
+            # Lese Datei und erstelle neue Blöcke
+            CONTENT=$(cat "$LOCAL_FILE" | sed 's/"/\\"/g' | sed 's/\\\\/\\\\\\\\/g' | tr '\n' ' ' | sed 's/  */ /g')
+            
+            # Erstelle neue Blöcke
+            BLOCKS="[{\"object\": \"block\", \"type\": \"heading_1\", \"heading_1\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"🌙 Tagesreflexion - $WEEKDAY_GER, $DATE_GERMAN\"}}]}},"
+            BLOCKS="$BLOCKS{\"object\": \"block\", \"type\": \"divider\", \"divider\": {}},"
+            BLOCKS="$BLOCKS{\"object\": \"block\", \"type\": \"callout\", \"callout\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"Automatisch aktualisiert aus memory/$DATE_STR.md\"}}], \"icon\": {\"emoji\": \"🤖\"}}},"
+            
+            if [ ${#CONTENT} -gt 1800 ]; then
+                BLOCKS="$BLOCKS{\"object\": \"block\", \"type\": \"callout\", \"callout\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"Inhalt zu lang für Notion. Siehe lokale Datei f\\u00fcr Details.\"}}], \"icon\": {\"emoji\": \"⚠️\"}}}"
+            else
+                BLOCKS="$BLOCKS{\"object\": \"block\", \"type\": \"paragraph\", \"paragraph\": {\"rich_text\": [{\"type\": \"text\", \"text\": {\"content\": \"$CONTENT\"}}]}}"
+            fi
+            BLOCKS="$BLOCKS]"
+            
+            # Füge neue Blöcke hinzu
+            RESPONSE=$(curl -s -X PATCH "https://api.notion.com/v1/blocks/$PAGE_ID/children" \
+              -H "Authorization: Bearer $NOTION_TOKEN" \
+              -H "Notion-Version: 2022-06-28" \
+              -H "Content-Type: application/json" \
+              -d "{\"children\": $BLOCKS}")
+            
+            if echo "$RESPONSE" | grep -q '"id"'; then
+                echo "✅ Eintrag für $DATE_YMD aktualisiert mit lokalem Inhalt"
+            else
+                echo "⚠️ Konnte Eintrag nicht aktualisieren: $RESPONSE"
+            fi
+        fi
     fi
     
     exit 0

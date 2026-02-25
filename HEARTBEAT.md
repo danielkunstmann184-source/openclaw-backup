@@ -1,57 +1,52 @@
-# 🚨 HEARTBEAT CHECKLIST
+# HEARTBEAT.md - Automatische Checks
 
-Kurze Checks für regelmäßige Heartbeats. Token-sparend halten!
+_Proaktive System-Überwachung ohne Spam._
 
-## Tägliche Checks (rotieren)
+---
 
-- [ ] **Backup-Status** → `tail logs/backup.log` — letztes Backup OK?
-- [ ] **Git-Status** → Uncommitted Änderungen? Push nötig?
-- [ ] **Cron-Jobs** → `cron list` — alle laufen?
-- [ ] **API-Keys** → Brave/Notion/Resend funktionieren?
-- [ ] **Memory-Datei** → Heutige Datei existiert? Einträge aktuell?
+## 🔄 Health-Check läuft automatisch
 
-## Wöchentliche Checks (Sonntags)
+**Systemd-Timer:** `health-check.timer` (täglich 06:00)
+- Prüft alle systemd-Timer
+- Prüft Git-Status
+- Prüft API-Keys
+- Auto-Reparatur wo möglich
 
-- [ ] **GitHub-Push** → Repo aktuell?
-- [ ] **TELOS-Review** → GOALS.md — Ziele noch aktuell?
-- [ ] **Memory-Wartung** → MEMORY.md aus Tagesdateien aktualisieren
-- [ ] **PEOPLE.md** → "Letzter Kontakt" aktualisieren?
-
-## Tracking
-
-```json
-// Speichere in memory/heartbeat-state.json:
-{
-  "lastChecks": {
-    "backup": 1772016000,
-    "git": 1772016000,
-    "cron": 1772016000,
-    "api": 1771929600,
-    "memory": 1771929600
-  },
-  "lastUpdated": "2026-02-23T10:00:00Z"
-}
+**Manuell prüfen:**
+```bash
+systemctl list-timers
+tail /root/workspace/logs/health_check.log
 ```
 
-**Zeit-Formate:**
-- Unix-Timestamp (Sekunden seit 1970)
-- ISO 8601 für `lastUpdated`
+---
 
-## Wann zu melden
+## ✅ Wöchentliche Review (Sonntags)
+
+- **TELOS-Check:** Ziele in GOALS.md noch aktuell?
+- **Memory-Wartung:** Wichtiges aus Tagesdateien in MEMORY.md übertragen
+- **PEOPLE.md:** "Letzter Kontakt" aktualisieren
+
+---
+
+## 📊 Tracking
+
+Status in: `memory/heartbeat-state.json`
+
+---
+
+## 💬 Wann melde ich mich?
 
 **Sprech wenn:**
 - Backup fehlgeschlagen
-- Cron-Job mit Fehler (⚠️ Zeit-Problem beachten: UTC vs MEZ = 1h Unterschied!)
-- API-Key ungültig
+- System-Check zeigt kritischen Fehler
 - Wichtige Deadline <2h
 - >8h seit letzter Nachricht
-- **Dringlichkeit:** Egal welche Uhrzeit — wenn es wichtig ist, melde dich!
 
 **Schweige (HEARTBEAT_OK) wenn:**
-- Mensch offensichtlich beschäftigt
+- Alles läuft normal
+- Du bist offensichtlich beschäftigt
 - Erst vor <30min gecheckt
-- Nichts Neues
 
-## ERINNERUNG
+---
 
-Session-Speicher = NICHT EXISTENT → IMMER sofort in Dateien schreiben!
+*Nichts vergessen: Session-Speicher = Nicht existent. Wichtiges immer sofort speichern.*

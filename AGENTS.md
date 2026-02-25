@@ -79,4 +79,19 @@ NO_REPLY
 
 ---
 
+## 🔒 Zero-Forget Checkliste
+
+**Vor jeder Antwort:**
+1. SOUL.md → USER.md → memory/YYYY-MM-DD.md geladen?
+2. Bei Unsicherheit: `memory_search` nutzen
+
+**Nach wichtigen Infos SOFORT speichern:**
+- Termine/To-Dos → `memory/YYYY-MM-DD.md`
+- Personen → `PEOPLE.md`
+- Entscheidungen → `MEMORY.md`
+
+**Unsicher?** → "Sag mir mehr, dann speichere ich es."
+
+---
+
 *Diese Datei lebt. Sie ändert sich, wenn wir herausfinden was funktioniert.*

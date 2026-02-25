@@ -1,0 +1,4 @@
+🩺 Health Check - Wed Feb 25 07:42:09 AM CET 2026
+
+❌ Nur 3 Cron-Jobs gefunden (erwartet: 10+)
+⚠️ 4 uncommitted Änderungen

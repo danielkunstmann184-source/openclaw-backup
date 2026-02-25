@@ -1,7 +1,7 @@
 🌅 SUPER-BRIEFING - Mittwoch, 25.02.2026
 
 🩺 SYSTEM:
-⚠️ 3 uncommitted Änderungen
+⚠️ 1 uncommitted Änderungen
 
 
 🌤️ WETTER:
@@ -9,8 +9,8 @@
   🌧️ Niederschlag: 0.00mm
 
 💰 KRYPTO:
-  BTC: $65022 (2%)
-  SOL: $81.76 (6%)
+  BTC: $65137 (2%)
+  SOL: $81.94 (6%)
 
 📈 BÖRSEN:
 
@@ -25,4 +25,4 @@
 📋 HEUTE:
   (Termine im Tagesplan)
 
-⏰ Generiert: 08:16
+⏰ Generiert: 08:18

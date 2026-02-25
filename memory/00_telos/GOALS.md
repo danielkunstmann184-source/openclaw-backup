@@ -4,19 +4,18 @@
 
 ---
 
-## 🎯 Kurzfristige Ziele (2026)
+## 🎯 Kurzfristige Ziele (März 2026)
 
 ### Beruflich
-- [x] Erste-Hilfe-Kurs absolvieren (Februar 2026) ✅ **ERLEDIGT**
-- [ ] Creditreform Kundenakquise erfolgreich aufbauen
-  - **Dieser Monat (Februar):** Noch 3 Mitglieder + 1 CrefoZert abrechnen
-  - **2026 Gesamtziel:** 60 Mitglieder + 12 CrefoZerts
-- [ ] Provisionen generieren (Blankenhain 540€ in Aussicht)
+- [ ] Creditreform Kundenakquise: 3 neue Mitglieder + 1 CrefoZert
+- [ ] Blankenhain Follow-up (540€ Provision)
+- [ ] Weimar Unterlagen finalisieren
+- [ ] **2026 Gesamtziel:** 60 Mitglieder + 12 CrefoZerts
 
 ### Persönlich
-- [ ] Regelmäßiges Lauftraining mit Michael (Halbmarathon-Training)
-- [ ] Portugal-Reise im Dezember 2025 vorbereiten (bereits gebucht)
-- [ ] Lebensmittel-Budget im Griff halten (400€/Monat mit Juli)
+- [ ] Regelmäßiges Lauftraining mit Michael (Halbmarathon-Vorbereitung)
+- [ ] Lebensmittel-Budget im Griff halten (400€/Monat mit Juliane)
+- [ ] Sauna-Routine 2-3x pro Woche
 
 ### Familie
 - [ ] Qualitätszeit mit Fin und Jonas
@@ -24,9 +23,10 @@
 
 ---
 
-## 🎯 Mittelfristige Ziele (3-5 Jahre)
+## 🎯 Kurzfristige Ziele (Q1 2026)
 
 ### Beruflich
+- [x] Erste-Hilfe-Kurs absolvieren ✅ **ERLEDIGT** (18.02.2026)
 - [ ] Karriere bei Creditreform weiterentwickeln
 - [ ] Finanzielle Stabilität für Familie sicherstellen
 
@@ -34,39 +34,37 @@
 - [ ] Fitness-Level halten/verbessern (Laufen, Sauna, Schwimmen)
 - [ ] Freundschaften pflegen (Michael, Doreen, etc.)
 
-### Familie
-- [ ] Fin und Jonas wichtige Lebenslehren beibringen
-- [ ] Stabile Partnerschaft mit Juliane weiter pflegen
-
 ---
 
-## 🎯 Langfristige Ziele (Lebensziele)
+## 🎯 Mittelfristige Ziele (3-5 Jahre)
 
 ### Beruflich
 - [ ] **Vertriebsleiter bei Creditreform werden**
 - [ ] **Jahresgehalt: 80.000 - 100.000 € erreichen**
 
-### Weitere Bereiche
-*Folgen später...*
+### Familie
+- [ ] Fin und Jonas wichtige Lebenslehren beibringen
+- [ ] Stabile Partnerschaft mit Juliane weiter pflegen
+- [ ] Eigenes Haus mit Garten
 
 ---
 
-## 📊 Aktive Projekte (ausführlich)
+## 🎯 Langfristige Ziele (Lebensziele)
 
-Siehe auch: [../03_projects/aktiv.md](../03_projects/aktiv.md)
-
-### 1. Setup-Phase (OpenClaw)
-- Status: Laufend
-- Ziel: Vollständige Digital Twin Infrastruktur
-
-### 2. Eltern-Arbeitsschutzklage
-- Status: Laufend
-- Ziel: Gerechte Lösung für Mutter Iwona
-
-### 3. Kundenakquise Creditreform
-- Status: Aktiv
-- Ziele: Blankenhain (540€), Weimar (Chance), Ettersberg (erhalten)
+- [ ] Finanziell unabhängig und sorgenfrei
+- [ ] Kinder zu selbstständigen, integeren Erwachsenen erzogen
+- [ ] Erfülltes Leben mit Balance aus Arbeit, Familie und Freizeit
 
 ---
 
-*Letzte Aktualisierung: 2026-02-18 (18:26)*
+## 📊 Aktive Projekte
+
+Siehe: [PROJECTS.md](./PROJECTS.md) und [../03_projects/aktiv.md](../03_projects/aktiv.md)
+
+1. **Kundenakquise Creditreform** - Aktiv
+2. **Eltern-Arbeitsschutzklage** - Laufend
+3. **Fitness & Laufen** - Aktiv
+
+---
+
+*Letzte Aktualisierung: 2026-02-25*

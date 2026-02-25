@@ -89,9 +89,27 @@
 
 ## 📚 Erkenntnisse durch OpenClaw/PAI
 
-- **KI als Second Brain funktioniert** - aber nur mit konsequenter Persistenz
-- **Cron-Jobs sind mächtig** - aber nur mit zuverlässiger Delivery
-- **TELOS-Struktur hilft** - klare Ziele und Werte fokussieren
+### System-Optimierung (Februar 2026)
+
+**Dokumentation schlank halten:**
+- AGENTS.md von 500+ Zeilen auf 70 reduziert
+- SOUL.md auf Essenz gekürzt
+- Nur was wirklich nötig ist behalten
+
+**TTS-Integration:**
+- gTTS (Google) liefert natürlichere deutsche Sprache als Piper
+- Whisper für Sprache-zu-Text funktioniert zuverlässig
+- Auto-Modus: Kurze Antworten + Sprache = sicher beim Fahren
+
+**Super-Briefing:**
+- EINE Nachricht um 07:00 statt 4 separate Briefings
+- Weniger Spam, mehr Übersicht
+- Kombiniert: System-Check, Wetter, Krypto, Gestern, Heute
+
+**OpenClaw Update (2026.2.24):**
+- Cron-Jobs zuverlässiger (weniger Duplikate)
+- Heartbeat-Spam in DMs reduziert
+- Sicherheitsfixes aktiv
 
 ---
 

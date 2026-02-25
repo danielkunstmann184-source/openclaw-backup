@@ -34,16 +34,16 @@
 - [ ] Integration mit Smart Home (zukünftig)
 
 ### Digitale Organisation
-- [ ] Vollständiges "Second Brain" aufgebaut
-- [ ] Alle wichtigen Informationen zentralisiert
-- [ ] Familien-Kalender und -Planung integriert
+- [x] Vollständiges "Second Brain" aufgebaut ✅ **ERLEDIGT**
+- [x] Alle wichtigen Informationen zentralisiert ✅ **ERLEDIGT**
+- [ ] Familien-Kalender und -Planung integrieren
 
 ---
 
 ## ✈️ Reisen & Erlebnisse
 
-### Kurzfristig (2025-2026)
-- [x] Portugal mit Michael (Dezember 2025) - gebucht! ✅
+### Kurzfristig (2026)
+- [x] Portugal mit Michael (Dezember 2025) ✅ **ERLEDIGT**
 - [ ] Wochenendtrips mit Juliane (ohne Kinder)
 - [ ] Besuch bei Eltern in Polen (Mutter Iwona)
 
@@ -87,8 +87,6 @@
 ---
 
 ## 💭 Spontane Ideen (Sammelbecken)
-
-*Hier kommen alle spontanen Gedanken rein...*
 
 - Eigenes kleines Gewächshaus im Garten?
 - Hund für die Familie?

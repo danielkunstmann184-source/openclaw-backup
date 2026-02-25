@@ -78,17 +78,17 @@ echo "  $CONDITION | $MIN_TEMP°C bis $MAX_TEMP°C" >> "$BRIEFING_FILE"
 echo "" >> "$BRIEFING_FILE"
 
 # ============================================
-# 3. KRYPTO (schnell)
+# 3. KRYPTO (USD)
 # ============================================
 echo "💰 KRYPTO:" >> "$BRIEFING_FILE"
-CRYPTO=$(curl -s "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,solana&vs_currencies=eur&include_24hr_change=true" 2>/dev/null || echo '{}')
-BTC=$(echo "$CRYPTO" | grep -o '"eur":[0-9.]*' | head -1 | cut -d':' -f2)
-BTC_CHG=$(echo "$CRYPTO" | grep -o '"eur_24h_change":[-0-9.]*' | head -1 | cut -d':' -f2 | cut -d'.' -f1)
-SOL=$(echo "$CRYPTO" | grep -o '"eur":[0-9.]*' | tail -1 | cut -d':' -f2)
-SOL_CHG=$(echo "$CRYPTO" | grep -o '"eur_24h_change":[-0-9.]*' | tail -1 | cut -d':' -f2 | cut -d'.' -f1)
+CRYPTO=$(curl -s "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,solana&vs_currencies=usd&include_24hr_change=true" 2>/dev/null || echo '{}')
+BTC=$(echo "$CRYPTO" | grep -o '"usd":[0-9.]*' | head -1 | cut -d':' -f2)
+BTC_CHG=$(echo "$CRYPTO" | grep -o '"usd_24h_change":[-0-9.]*' | head -1 | cut -d':' -f2 | cut -d'.' -f1)
+SOL=$(echo "$CRYPTO" | grep -o '"usd":[0-9.]*' | tail -1 | cut -d':' -f2)
+SOL_CHG=$(echo "$CRYPTO" | grep -o '"usd_24h_change":[-0-9.]*' | tail -1 | cut -d':' -f2 | cut -d'.' -f1)
 
-[ -n "$BTC" ] && echo "  BTC: €$BTC (${BTC_CHG}%)" >> "$BRIEFING_FILE"
-[ -n "$SOL" ] && echo "  SOL: €$SOL (${SOL_CHG}%)" >> "$BRIEFING_FILE"
+[ -n "$BTC" ] && echo "  BTC: \$$BTC (${BTC_CHG}%)" >> "$BRIEFING_FILE"
+[ -n "$SOL" ] && echo "  SOL: \$$SOL (${SOL_CHG}%)" >> "$BRIEFING_FILE"
 echo "" >> "$BRIEFING_FILE"
 
 # ============================================

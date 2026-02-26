@@ -17,10 +17,10 @@
 ---
 
 ### 2. Kundenakquise Druck
-**Status:** 🟡 Druck da, aber machbar
-**Beschreibung:** Blankenhain (540€ Provision) und Weimar warten auf Abschluss
+**Status:** 🟢 Unter Kontrolle
+**Beschreibung:** Februar war knapp, aber März ist neu
 **Lösung:**
-- Follow-ups geplant
+- Fokus auf neue Kunden
 - Cron-Erinnerungen eingerichtet
 - Dokumentation im Projekt-Tracking
 

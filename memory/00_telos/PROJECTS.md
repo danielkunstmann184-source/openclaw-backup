@@ -51,13 +51,11 @@
 - **Ziel:** 3 neue Mitglieder + 1 CrefoZert
 
 #### Blankenhain
-- **Status:** 🟡 Entscheidung ausstehend
-- **Wert:** 1.080€ Mitgliedschaft / 540€ Provision
-- **Nächster Schritt:** Follow-up
+- **Status:** ✅ **ABGESCHLOSSEN** (Keine Entscheidung / Nicht zustande gekommen)
+- **Wert:** 540€ Provision (nicht realisiert)
 
 #### Weimar
-- **Status:** 🟡 Unterlagen nachreichen
-- **Nächster Schritt:** Unterschriebene Dokumente per E-Mail
+- **Status:** ✅ **ABGESCHLOSSEN** (Nicht zustande gekommen)
 
 #### Ettersberg
 - **Status:** 🟢 Erfolg - Kunde behalten

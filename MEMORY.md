@@ -20,10 +20,11 @@ Siehe: `memory/00_telos/` für Ziele, Werte, Identität
 ### 1. Kundenakquise Creditreform
 | Status | Nächster Schritt | Deadline |
 |--------|-----------------|----------|
-| 🟡 Aktiv | Blankenhain Follow-up, Weimar Unterlagen | Feb 2026 |
+| 🟡 Aktiv | Neukunden März | Feb/Marz 2026 |
 
-- Blankenhain: 540€ Provision möglich (Entscheidung ausstehend)
-- Weimar: Unterlagen nachreichen nach Absage
+- Blankenhain: ✅ Abgeschlossen (nicht zustande gekommen)
+- Weimar: ✅ Abgeschlossen (nicht zustande gekommen)
+- Ettersberg: ✅ Kunde behalten
 - Ziel: 60 Mitglieder + 12 CrefoZerts in 2026
 
 ### 2. Eltern-Arbeitsschutzklage

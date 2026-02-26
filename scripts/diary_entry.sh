@@ -1,6 +1,6 @@
 #!/bin/bash
-# Daily Diary Entry Script for Notion - v3.0 (Mit Content-Import)
-# Liest memory/YYYY-MM-DD.md und überträgt INHALT nach Notion
+# Daily Diary Entry Script for Notion - v3.2 (Automatische schöne Formatierung)
+# Liest memory/YYYY-MM-DD.md und überträgt INHALT formatiert nach Notion
 
 WORKSPACE="/root/workspace"
 LOG_FILE="$WORKSPACE/logs/diary.log"
@@ -12,8 +12,13 @@ log() {
     echo "[$(TZ='Europe/Berlin' date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
+# JSON escaping für Notion
+json_escape() {
+    echo "$1" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/ /g' | sed 's/  */ /g'
+}
+
 mkdir -p "$WORKSPACE/logs"
-log "=== Script gestartet (v3.0) ==="
+log "=== Script gestartet (v3.2) ==="
 
 # Token laden
 NOTION_TOKEN=$(grep "^NOTION_API_KEY=" "$CONFIG_DIR/.env.notion" 2>/dev/null | cut -d'=' -f2 | tr -d '[:space:]')
@@ -38,12 +43,58 @@ LOCAL_FILE="$WORKSPACE/memory/$DATE_STR.md"
 if [ -f "$LOCAL_FILE" ]; then
     log "📄 Datei gefunden: $LOCAL_FILE"
     HAS_CONTENT=true
-    # Lese Inhalt (max 3000 Zeichen für Notion)
-    CONTENT=$(cat "$LOCAL_FILE" | head -c 3000)
 else
     log "⚠️ Keine lokale Datei gefunden"
     HAS_CONTENT=false
 fi
+
+# Baue formatierte Blöcke aus Markdown
+build_blocks() {
+    local file="$1"
+    local blocks=""
+    local first=true
+    
+    while IFS= read -r line; do
+        # Überspringe leere Zeilen am Anfang
+        [ "$first" = true ] && [ -z "$line" ] && continue
+        first=false
+        
+        # Escape für JSON
+        local safe_line=$(json_escape "$line")
+        
+        if [ -z "$line" ]; then
+            # Leere Zeile = Divider (aber nicht doppelt)
+            continue
+        elif [[ "$line" =~ ^#+\  ]]; then
+            # Heading (## Überschrift)
+            local level=$(echo "$line" | grep -o '^#*' | wc -c)
+            level=$((level - 1))
+            [ $level -gt 3 ] && level=3
+            local text=$(echo "$line" | sed 's/^#* //')
+            safe_line=$(json_escape "$text")
+            [ -n "$blocks" ] && blocks="$blocks,"
+            blocks="$blocks{\"object\":\"block\",\"type\":\"heading_$level\",\"heading_$level\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$safe_line\"}}]}}"
+        elif [[ "$line" =~ ^[\*\-]\  ]]; then
+            # Bullet point
+            local text=$(echo "$line" | sed 's/^[\*\-] //')
+            safe_line=$(json_escape "$text")
+            [ -n "$blocks" ] && blocks="$blocks,"
+            blocks="$blocks{\"object\":\"block\",\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$safe_line\"}}]}}"
+        elif [[ "$line" =~ ^\|\  ]]; then
+            # Tabelle (als Callout)
+            safe_line=$(json_escape "$line")
+            [ -n "$blocks" ] && blocks="$blocks,"
+            blocks="$blocks{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$safe_line\"}}],\"icon\":{\"emoji\":\"📊\"}}}"
+        else
+            # Normaler Paragraph (nur wenn nicht leer)
+            [ -n "$safe_line" ] || continue
+            [ -n "$blocks" ] && blocks="$blocks,"
+            blocks="$blocks{\"object\":\"block\",\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$safe_line\"}}]}}"
+        fi
+    done < "$file"
+    
+    echo "$blocks"
+}
 
 # Prüfe Existenz
 EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
@@ -53,59 +104,73 @@ EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/que
   -d "{\"filter\":{\"property\":\"Name\",\"title\":{\"equals\":\"${DATE_YMD}_Tagesreflexion\"}}}")
 
 if echo "$EXISTING" | grep -q '"results":\[\]'; then
-    log "📝 Erstelle neuen Eintrag mit Inhalt..."
+    # NEUER EINTRAG
+    log "📝 Erstelle neuen Eintrag mit formatiertem Inhalt..."
     
-    # Baue Blöcke
-    BLOCKS="[{\"object\":\"block\",\"type\":\"heading_1\",\"heading_1\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"🌙 Tagesreflexion - $WEEKDAY_GER, $DATE_GERMAN\"}}]}},"
-    BLOCKS="$BLOCKS{\"object\":\"block\",\"type\":\"divider\",\"divider\":{}},"
+    # Haupttitel
+    BLOCKS="{\"object\":\"block\",\"type\":\"heading_1\",\"heading_1\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"🌙 Tagesreflexion - $WEEKDAY_GER, $DATE_GERMAN\"}}]}}"
     
     if [ "$HAS_CONTENT" = true ]; then
-        # Füge Inhalt als Callout hinzu
-        # Escape für JSON
-        SAFE_CONTENT=$(echo "$CONTENT" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/ /g' | tr '\n' ' ' | sed 's/  */ /g' | head -c 2000)
-        BLOCKS="$BLOCKS{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"📝 Inhalt aus memory/$DATE_STR.md:\"}}],\"icon\":{\"emoji\":\"📄\"}}},"
-        BLOCKS="$BLOCKS{\"object\":\"block\",\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$SAFE_CONTENT\"}}]}}"
+        # Füge formatierte Inhaltsblöcke hinzu
+        CONTENT_BLOCKS=$(build_blocks "$LOCAL_FILE")
+        [ -n "$CONTENT_BLOCKS" ] && BLOCKS="$BLOCKS,$CONTENT_BLOCKS"
     else
-        BLOCKS="$BLOCKS{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Keine lokale Datei gefunden\"}}],\"icon\":{\"emoji\":\"⚠️\"}}}"
+        BLOCKS="$BLOCKS,{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Keine Tagesdatei gefunden\"}}],\"icon\":{\"emoji\":\"⚠️\"}}}"
     fi
-    BLOCKS="$BLOCKS]"
+    
+    # Footer
+    BLOCKS="$BLOCKS,{\"object\":\"block\",\"type\":\"divider\",\"divider\":{}},"
+    BLOCKS="$BLOCKS{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Automatisch übertragen aus memory/$DATE_STR.md\"}}],\"icon\":{\"emoji\":\"🤖\"}}}"
     
     # Erstelle Page
-    curl -s -X POST "https://api.notion.com/v1/pages" \
+    RESPONSE=$(curl -s -X POST "https://api.notion.com/v1/pages" \
       -H "Authorization: Bearer $NOTION_TOKEN" \
       -H "Notion-Version: 2022-06-28" \
       -H "Content-Type: application/json" \
       -d "{
         \"parent\":{\"database_id\":\"$DATABASE_ID\"},
         \"properties\":{\"Name\":{\"title\":[{\"text\":{\"content\":\"${DATE_YMD}_Tagesreflexion\"}}]}},
-        \"children\":$BLOCKS
-      }" > /dev/null 2>&1
+        \"children\":[$BLOCKS]
+      }")
     
-    log "✅ Eintrag erstellt"
+    if echo "$RESPONSE" | grep -q '"id"'; then
+        log "✅ Eintrag erstellt"
+    else
+        log "❌ Fehler beim Erstellen: $(echo $RESPONSE | head -c 200)"
+    fi
 else
-    log "ℹ️ Eintrag existiert bereits"
+    # BESTEHENDER EINTRAG - AKTUALISIERE
+    log "📝 Eintrag existiert - aktualisiere mit formatiertem Inhalt..."
     
-    # Optional: Aktualisiere mit Inhalt wenn vorhanden
-    if [ "$HAS_CONTENT" = true ]; then
-        log "📝 Aktualisiere mit Inhalt..."
-        PAGE_ID=$(echo "$EXISTING" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
-        if [ -n "$PAGE_ID" ]; then
-            SAFE_CONTENT=$(echo "$CONTENT" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/ /g' | tr '\n' ' ' | sed 's/  */ /g' | head -c 1500)
-            
-            # Füge neuen Block hinzu
-            curl -s -X PATCH "https://api.notion.com/v1/blocks/$PAGE_ID/children" \
-              -H "Authorization: Bearer $NOTION_TOKEN" \
-              -H "Notion-Version: 2022-06-28" \
-              -H "Content-Type: application/json" \
-              -d "{
-                \"children\":[
-                  {\"object\":\"block\",\"type\":\"divider\",\"divider\":{}},
-                  {\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"🔄 Aktualisiert am $(TZ='Europe/Berlin' date '+%d.%m.%Y %H:%M')\"}}],\"icon\":{\"emoji\":\"🤖\"}}},
-                  {\"object\":\"block\",\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"$SAFE_CONTENT\"}}]}}
-                ]
-              }" > /dev/null 2>&1
+    PAGE_ID=$(echo "$EXISTING" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+    
+    if [ -n "$PAGE_ID" ] && [ "$HAS_CONTENT" = true ]; then
+        # Lösche alte Blöcke (außer Titel wenn möglich, sonst einfach neuen Inhalt anhängen)
+        # Wir fügen einen "Aktualisiert"-Block hinzu
+        
+        BLOCKS="{\"object\":\"block\",\"type\":\"divider\",\"divider\":{}}"
+        
+        # Füge neuen formatierten Inhalt hinzu
+        CONTENT_BLOCKS=$(build_blocks "$LOCAL_FILE")
+        [ -n "$CONTENT_BLOCKS" ] && BLOCKS="$BLOCKS,$CONTENT_BLOCKS"
+        
+        # Aktualisierungshinweis
+        BLOCKS="$BLOCKS,{\"object\":\"block\",\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"🔄 Aktualisiert am $(TZ='Europe/Berlin' date '+%d.%m.%Y %H:%M') aus memory/$DATE_STR.md\"}}],\"icon\":{\"emoji\":\"🤖\"}}}"
+        
+        # Füge neue Blöcke hinzu
+        RESPONSE=$(curl -s -X PATCH "https://api.notion.com/v1/blocks/$PAGE_ID/children" \
+          -H "Authorization: Bearer $NOTION_TOKEN" \
+          -H "Notion-Version: 2022-06-28" \
+          -H "Content-Type: application/json" \
+          -d "{\"children\":[$BLOCKS]}")
+        
+        if echo "$RESPONSE" | grep -q '"id"'; then
             log "✅ Eintrag aktualisiert"
+        else
+            log "⚠️ Konnte nicht aktualisieren: $(echo $RESPONSE | head -c 200)"
         fi
+    else
+        log "ℹ️ Kein Inhalt zum Aktualisieren"
     fi
 fi
 

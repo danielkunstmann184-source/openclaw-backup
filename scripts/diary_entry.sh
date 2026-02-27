@@ -48,7 +48,31 @@ else
     HAS_CONTENT=false
 fi
 
-# Baue formatierte Blöcke aus Markdown
+# Extrahiere Stichwort aus Tagesdatei
+extract_keyword() {
+    local file="$1"
+    local keyword=""
+    
+    # Suche nach Fokus
+    if grep -q "Fokus" "$file" 2>/dev/null; then
+        keyword=$(grep -A1 "Fokus" "$file" | tail -1 | sed 's/^- //; s/^[[:space:]]*//' | cut -d' ' -f1-3)
+    fi
+    
+    # Falls kein Fokus gefunden, nimm ersten wichtigen Begriff
+    if [ -z "$keyword" ]; then
+        keyword=$(grep -E "^\*\*|^\-" "$file" | head -1 | sed 's/^[\*\-] //; s/^\*\*//' | cut -d' ' -f1-2)
+    fi
+    
+    # Falls immer noch leer, nimm Aktivität
+    if [ -z "$keyword" ]; then
+        keyword=$(grep -E "Büro|Akquise|Sauna|Sport|Termin" "$file" | head -1 | cut -d' ' -f1)
+    fi
+    
+    # Cleanup
+    keyword=$(echo "$keyword" | tr -d '\n' | sed 's/[[:space:]]*$//')
+    
+    echo "$keyword"
+}
 build_blocks() {
     local file="$1"
     local blocks=""
@@ -96,12 +120,21 @@ build_blocks() {
     echo "$blocks"
 }
 
+if [ "$HAS_CONTENT" = true ]; then
+    KEYWORD=$(extract_keyword "$LOCAL_FILE")
+    [ -n "$KEYWORD" ] && KEYWORD="_$KEYWORD"
+else
+    KEYWORD=""
+fi
+
+log "Stichwort: ${KEYWORD:-keines}"
+
 # Prüfe Existenz
 EXISTING=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
   -H "Authorization: Bearer $NOTION_TOKEN" \
   -H "Notion-Version: 2022-06-28" \
   -H "Content-Type: application/json" \
-  -d "{\"filter\":{\"property\":\"Name\",\"title\":{\"equals\":\"${DATE_YMD}_Tagesreflexion\"}}}")
+  -d "{\"filter\":{\"property\":\"Name\",\"title\":{\"equals\":\"${DATE_YMD}${KEYWORD}_Tagesreflexion\"}}}")
 
 if echo "$EXISTING" | grep -q '"results":\[\]'; then
     # NEUER EINTRAG
@@ -129,7 +162,7 @@ if echo "$EXISTING" | grep -q '"results":\[\]'; then
       -H "Content-Type: application/json" \
       -d "{
         \"parent\":{\"database_id\":\"$DATABASE_ID\"},
-        \"properties\":{\"Name\":{\"title\":[{\"text\":{\"content\":\"${DATE_YMD}_Tagesreflexion\"}}]}},
+        \"properties\":{\"Name\":{\"title\":[{\"text\":{\"content\":\"${DATE_YMD}${KEYWORD}_Tagesreflexion\"}}]}},
         \"children\":[$BLOCKS]
       }")
     

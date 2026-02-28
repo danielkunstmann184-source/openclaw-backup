@@ -47,6 +47,18 @@
 
 ---
 
+## Denis (Chef) 👨‍💼
+- **Beziehung**: Chef (Creditreform Gotha)
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-28
+- **Notizen**:
+  - Chef bei Creditreform Gotha
+  - Abrechnungen und Abschlüsse gehen an ihn
+  - Für Provisionen und Zielvereinbarungen relevant
+
+---
+
 ## Patrizia (Schwester) 👩‍❤️‍👨
 - **Beziehung**: Schwester
 - **Wichtigkeit**: 9/10

@@ -89,6 +89,11 @@ else
 fi
 echo "" >> "$BRIEFING_FILE"
 
+# 4b. MEDIKAMENTE (tägliche Erinnerung)
+echo "💊 MEDIKAMENTE:" >> "$BRIEFING_FILE"
+echo "  • Cetirizin gegen Heuschnupfen" >> "$BRIEFING_FILE"
+echo "" >> "$BRIEFING_FILE"
+
 # 5. HEUTE
 echo "📋 HEUTE:" >> "$BRIEFING_FILE"
 TODAY_FILE="$WORKSPACE/memory/$TODAY.md"

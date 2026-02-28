@@ -1,0 +1,4 @@
+Das Problem ist, dass ich einfach nur von dir sehe, dass eben automatisch aus Memories
+Tag X-Ups-Lon übertragen wird, aber nicht in einer klar lesbaren Struktur für mich,
+die MD-Datei, also die Markdown-Datei kann ich nämlich so nicht öffnen, ich brauche das Nauchen.
+Das X-Trakt aus der Markdown-Datei in klartext.

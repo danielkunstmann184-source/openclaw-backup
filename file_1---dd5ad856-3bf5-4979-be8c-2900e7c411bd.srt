@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:07,240
+Prüfe auf jeden Fall Manuell und wenn es hier irgendwelche Unstimmigkeiten ergeben
+
+2
+00:00:07,240 --> 00:00:12,400
+aktualisierer automatisch oder finde eine Lösung dafür.
+

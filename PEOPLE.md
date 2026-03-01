@@ -49,6 +49,16 @@
   - Arbeitsschutzklage läuft
   - 28.02.: Besucht in Wahlwinkel
 
+## Sebastian (Stiefvater) 👨
+- **Beziehung**: Lebenspartner von Iwona (Stiefvater)
+- **Wichtigkeit**: 6/10
+- **Geburtstag**: Unbekannt
+- **Letzter Kontakt**: 2026-02-28
+- **Wohnort**: Wahlwinkel
+- **Notizen**:
+  - Lebt mit Iwona zusammen in Wahlwinkel
+  - 28.02.: Getroffen bei Besuch
+
 ## Ralf (Vater) 👨
 - **Beziehung**: Vater
 - **Wichtigkeit**: 7/10

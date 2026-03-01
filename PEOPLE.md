@@ -32,10 +32,10 @@
 ## Michael (Freund) 🤝
 - **Beziehung**: Bester Freund
 - **Wichtigkeit**: 9/10
-- **Geburtstag**: Unbekannt
+- **Geburtstag**: 18.10.1988
 - **Letzter Kontakt**: 2026-02-28
 - **Notizen**:
-  - Seit 20 Jahren befreundet
+  - Seit 6 Jahren befreundet (seit 2020)
   - 28.02.: Zeit miteinander verbracht (Couch-Abend)
 
 ## Iwona (Mutter) 👩

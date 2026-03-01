@@ -52,12 +52,13 @@
 ## Sebastian (Stiefvater) 👨
 - **Beziehung**: Lebenspartner von Iwona (Stiefvater)
 - **Wichtigkeit**: 6/10
-- **Geburtstag**: Unbekannt
+- **Geburtstag**: 04.06 (Jahr unbekannt)
 - **Letzter Kontakt**: 2026-02-28
 - **Wohnort**: Wahlwinkel
 - **Notizen**:
   - Lebt mit Iwona zusammen in Wahlwinkel
   - 28.02.: Getroffen bei Besuch
+  - Dauer der Beziehung/Hochzeit unbekannt
 
 ## Ralf (Vater) 👨
 - **Beziehung**: Vater

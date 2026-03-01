@@ -65,9 +65,11 @@ BTC_CHG=$(echo "$CRYPTO" | grep -o '"usd_24h_change":[^,}]*' | head -1 | cut -d'
 SOL=$(echo "$CRYPTO" | grep -o '"usd":[0-9.]*' | tail -1 | cut -d':' -f2)
 SOL_CHG=$(echo "$CRYPTO" | grep -o '"usd_24h_change":[^,}]*' | tail -1 | cut -d':' -f2 | cut -d'.' -f1)
 
-# Trend-Pfeile
-[ "$BTC_CHG" -gt 0 ] 2>/dev/null && BTC_ARROW="📈" || BTC_ARROW="📉"
-[ "$SOL_CHG" -gt 0 ] 2>/dev/null && SOL_ARROW="📈" || SOL_ARROW="📉"
+# Trend-Pfeile (sicherer Vergleich - nur erste Zahl nehmen)
+BTC_CHG_CLEAN=$(echo "$BTC_CHG" | head -1 | tr -d '\n')
+SOL_CHG_CLEAN=$(echo "$SOL_CHG" | head -1 | tr -d '\n')
+[ -n "$BTC_CHG_CLEAN" ] && [ "$BTC_CHG_CLEAN" -gt 0 ] 2>/dev/null && BTC_ARROW="📈" || BTC_ARROW="📉"
+[ -n "$SOL_CHG_CLEAN" ] && [ "$SOL_CHG_CLEAN" -gt 0 ] 2>/dev/null && SOL_ARROW="📈" || SOL_ARROW="📉"
 
 echo "  $BTC_ARROW Bitcoin: \$$BTC (${BTC_CHG}%)" >> "$BRIEFING_FILE"
 echo "  $SOL_ARROW Solana: \$$SOL (${SOL_CHG}%)" >> "$BRIEFING_FILE"

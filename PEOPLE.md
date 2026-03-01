@@ -4,34 +4,39 @@
 - **Beziehung**: Partnerin / Ehefrau
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 12.04.1995
-- **Letzter Kontakt**: 2026-02-21
+- **Letzter Kontakt**: 2026-02-28
 - **Kommunikationsstil**: Direkt, pragmatisch
-- **Interessen**: 
+- **Interessen**:
   - LOVES: Familie, Ordnung, Planung
   - AVOIDS: Unzuverlässigkeit
-- **Notizen**: 
+- **Notizen**:
   - Zwei gemeinsame Kinder: Fin und Jonas
+  - 28.02.: Gemütlicher Abend auf der Couch nach Trampolin-Aufbau
 
 ## Fin (Sohn) 👦
 - **Beziehung**: Sohn
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 30.10.2015
 - **Letzter Kontakt**: 2026-02-21
+- **Notizen**:
+  - 28.02.: Nicht daheim, bei Mutter in Körner gewesen
 
 ## Jonas (Sohn) 👶
 - **Beziehung**: Sohn
 - **Wichtigkeit**: 10/10
 - **Geburtstag**: 05.05.2023
-- **Letzter Kontakt**: 2026-02-21
+- **Letzter Kontakt**: 2026-02-28
+- **Notizen**:
+  - War dabei beim Trampolin-Aufbau am 28.02.
 
 ## Michael (Freund) 🤝
 - **Beziehung**: Bester Freund
 - **Wichtigkeit**: 9/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-21
+- **Letzter Kontakt**: 2026-02-28
 - **Notizen**:
   - Seit 20 Jahren befreundet
-  - Aktuell etwas distanziert
+  - 28.02.: Zeit miteinander verbracht (Couch-Abend)
 
 ## Iwona (Mutter) 👩
 - **Beziehung**: Mutter
@@ -63,22 +68,24 @@
 - **Beziehung**: Schwester
 - **Wichtigkeit**: 9/10
 - **Geburtstag**: 02.09.1990
-- **Letzter Kontakt**: 2026-02-16
+- **Letzter Kontakt**: 2026-02-28
 - **Notizen**:
   - Eine der nächsten Bezugspersonen seit Kindheit
   - Verheiratet mit Max (Schwager)
   - Kinder: Anton (Neffe) und Ella (Nichte)
   - Wohnort: Ranstadt
+  - 28.02.: Besucht in Wehrwinkel nach dem Trampolin-Aufbau
 
 ## Max (Schwager) 🎩
 - **Beziehung**: Schwager (Mann deiner Schwester Patrizia)
 - **Wichtigkeit**: 7/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-16
+- **Letzter Kontakt**: 2026-02-28
 - **Notizen**:
   - Verheiratet mit Patrizia (deiner Schwester)
   - Kinder: Anton und Ella
   - Wohnort: Ranstadt
+  - 28.02.: Zusammen mit Patrizia besucht
   - Hat letztes Jahr (2025) in Holland Junggesellenabschied gefeiert
   - Freundeskreis: Jerome, Fabian
 

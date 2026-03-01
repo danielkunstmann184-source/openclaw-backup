@@ -42,7 +42,12 @@
 - **Beziehung**: Mutter
 - **Wichtigkeit**: 8/10
 - **Geburtstag**: Unbekannt
-- **Letzter Kontakt**: 2026-02-21
+- **Letzter Kontakt**: 2026-02-28
+- **Wohnort**: Wahlwinkel
+- **Lebenspartner**: Sebastian
+- **Notizen**:
+  - Arbeitsschutzklage läuft
+  - 28.02.: Besucht in Wahlwinkel
 
 ## Ralf (Vater) 👨
 - **Beziehung**: Vater
@@ -74,7 +79,7 @@
   - Verheiratet mit Max (Schwager)
   - Kinder: Anton (Neffe) und Ella (Nichte)
   - Wohnort: Ranstadt
-  - 28.02.: Besucht in Wehrwinkel nach dem Trampolin-Aufbau
+  - 28.02.: Getroffen in Wahlwinkel bei Iwona
 
 ## Max (Schwager) 🎩
 - **Beziehung**: Schwager (Mann deiner Schwester Patrizia)
@@ -85,7 +90,7 @@
   - Verheiratet mit Patrizia (deiner Schwester)
   - Kinder: Anton und Ella
   - Wohnort: Ranstadt
-  - 28.02.: Zusammen mit Patrizia besucht
+  - 28.02.: Zusammen mit Patrizia bei Iwona in Wahlwinkel getroffen
   - Hat letztes Jahr (2025) in Holland Junggesellenabschied gefeiert
   - Freundeskreis: Jerome, Fabian
 

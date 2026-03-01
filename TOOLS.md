@@ -107,4 +107,14 @@ cd /root/workspace && git status
 
 ---
 
+## 🌐 Community Ressourcen
+
+**awesome-openclaw-skills:**
+https://github.com/sundial-org/awesome-openclaw-skills
+
+Curated Liste von Skills, Tools und Erweiterungen aus der Community.
+Für spätere Ideen und Experimente — nicht aktiv genutzt, aber als Inspiration gespeichert.
+
+---
+
 *Diese Datei wird bei neuen Tools aktualisiert.*

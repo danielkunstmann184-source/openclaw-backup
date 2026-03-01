@@ -7,7 +7,7 @@
 ## 🎯 Kurzfristige Ziele (März 2026)
 
 ### Beruflich
-- [ ] Creditreform Kundenakquise: 3 neue Mitglieder + 1 CrefoZert
+- [ ] Creditreform Kundenakquise: **5-7 neue Mitglieder + 1 CrefoZert** (März 2026)
 - [ ] Blankenhain Follow-up (540€ Provision)
 - [ ] Weimar Unterlagen finalisieren
 - [ ] **2026 Gesamtziel:** 60 Mitglieder + 12 CrefoZerts

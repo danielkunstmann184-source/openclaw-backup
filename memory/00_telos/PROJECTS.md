@@ -48,7 +48,7 @@
 ### Aktive Angebote
 
 #### März 2026
-- **Ziel:** 3 neue Mitglieder + 1 CrefoZert
+- **Ziel:** **5-7 neue Mitglieder + 1 CrefoZert**
 
 #### Blankenhain
 - **Status:** ✅ **ABGESCHLOSSEN** (Keine Entscheidung / Nicht zustande gekommen)

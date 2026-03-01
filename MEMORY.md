@@ -25,6 +25,7 @@ Siehe: `memory/00_telos/` für Ziele, Werte, Identität
 - Blankenhain: ✅ Abgeschlossen (nicht zustande gekommen)
 - Weimar: ✅ Abgeschlossen (nicht zustande gekommen)
 - Ettersberg: ✅ Kunde behalten
+- **März-Ziel:** **5-7 Mitglieder + 1 CrefoZert**
 - Ziel: 60 Mitglieder + 12 CrefoZerts in 2026
 
 ### 2. Eltern-Arbeitsschutzklage
